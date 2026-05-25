@@ -11,6 +11,7 @@
 
 import Link from "next/link";
 import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
+import { Reveal } from "@/components/Reveal";
 import { CASE_STUDIES } from "@/lib/case-studies";
 
 export default function HomePage() {
@@ -20,7 +21,7 @@ export default function HomePage() {
 
       {/* HERO — black backdrop, butter-yellow wordmark, restrained */}
       <section className="bg-warm-black text-cream min-h-[88vh] flex flex-col items-center justify-center px-6 py-20">
-        <div className="max-w-3xl text-center">
+        <Reveal className="max-w-3xl text-center">
           <p className="font-serif italic text-butter-yellow text-5xl md:text-7xl tracking-tight">
             farley
             <span className="font-sans not-italic font-bold text-cream">
@@ -30,12 +31,12 @@ export default function HomePage() {
           <p className="mt-10 text-sm md:text-base tracking-[0.25em] uppercase text-cream/80">
             Bridges the gap between creative and conversion
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* MEET COLLIE — first-person founder-operator framing */}
       <section id="about" className="bg-cream text-warm-black px-6 py-24">
-        <div className="max-w-3xl mx-auto">
+        <Reveal className="max-w-3xl mx-auto">
           <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-6">
             Meet Collie
           </p>
@@ -58,7 +59,7 @@ export default function HomePage() {
             I connect brand, space, events, and marketing to drive growth,
             engagement, and long-term value.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Stripe break */}
@@ -67,7 +68,7 @@ export default function HomePage() {
       {/* SELECTED WORK — 5 case studies per Collie's notes */}
       <section id="work" className="bg-cream text-warm-black px-6 py-24">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-end justify-between flex-wrap gap-6 mb-12">
+          <Reveal className="flex items-end justify-between flex-wrap gap-6 mb-12">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-4">
                 Selected work
@@ -77,14 +78,14 @@ export default function HomePage() {
                 events.
               </h2>
             </div>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {CASE_STUDIES.map((c) => (
+            {CASE_STUDIES.map((c, i) => (
+              <Reveal key={c.slug} delay={i * 80}>
               <Link
-                key={c.slug}
                 href={`/work/${c.slug}`}
-                className="block border border-warm-black/15 bg-cream p-8 hover:border-forest-teal transition group"
+                className="block border border-warm-black/15 bg-cream p-8 hover:border-forest-teal transition group h-full"
               >
                 <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-3">
                   {c.kind}
@@ -97,6 +98,7 @@ export default function HomePage() {
                   Read case study →
                 </p>
               </Link>
+              </Reveal>
             ))}
           </div>
           <div className="mt-10 text-center">
