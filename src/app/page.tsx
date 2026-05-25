@@ -10,6 +10,8 @@
  */
 
 import Link from "next/link";
+import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
+import { CASE_STUDIES } from "@/lib/case-studies";
 
 export default function HomePage() {
   return (
@@ -79,22 +81,31 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {CASE_STUDIES.map((c) => (
-              <article
+              <Link
                 key={c.slug}
-                className="border border-warm-black/15 bg-cream p-8 hover:border-forest-teal transition group"
+                href={`/work/${c.slug}`}
+                className="block border border-warm-black/15 bg-cream p-8 hover:border-forest-teal transition group"
               >
                 <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-3">
                   {c.kind}
                 </p>
                 <h3 className="text-xl font-semibold mb-3">{c.title}</h3>
                 <p className="text-sm leading-relaxed text-warm-black/75 mb-4">
-                  {c.hook}
+                  {c.hook_short}
                 </p>
-                <p className="text-xs italic text-forest-teal opacity-0 group-hover:opacity-100 transition">
-                  Case study coming →
+                <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition">
+                  Read case study →
                 </p>
-              </article>
+              </Link>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/work"
+              className="text-xs uppercase tracking-[0.25em] text-forest-teal border border-forest-teal px-6 py-3 hover:bg-forest-teal hover:text-cream transition"
+            >
+              View all work →
+            </Link>
           </div>
         </div>
       </section>
@@ -168,12 +179,12 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-5xl font-serif italic leading-tight mb-10">
             Tell us what you&apos;re building.
           </h2>
-          <a
-            href="mailto:collie@farleycreative.com"
+          <Link
+            href="/contact"
             className="inline-block bg-butter-yellow text-warm-black px-10 py-4 font-medium tracking-wide hover:opacity-90 transition"
           >
             Start the conversation →
-          </a>
+          </Link>
           <p className="mt-8 text-sm text-warm-black/60">
             collie@farleycreative.com · 210.709.5771
           </p>
@@ -182,35 +193,6 @@ export default function HomePage() {
 
       <SiteFooter />
     </main>
-  );
-}
-
-function HeaderNav() {
-  return (
-    <header className="bg-warm-black text-cream/90 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-warm-black/90">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-serif italic text-butter-yellow text-lg">
-          farley<span className="font-sans not-italic font-bold text-cream">creative</span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em]">
-          <a href="#about" className="hover:text-butter-yellow transition">About</a>
-          <a href="#work" className="hover:text-butter-yellow transition">Work</a>
-          <a href="#packages" className="hover:text-butter-yellow transition">Packages</a>
-          <a href="#contact" className="hover:text-butter-yellow transition">Contact</a>
-        </nav>
-      </div>
-    </header>
-  );
-}
-
-function SiteFooter() {
-  return (
-    <footer className="bg-warm-black text-cream/60 border-t border-cream/10 px-6 py-10">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-        <p>© {new Date().getFullYear()} Farley Creative</p>
-        <p className="font-serif italic">Where creative meets conversion.</p>
-      </div>
-    </footer>
   );
 }
 
@@ -238,46 +220,6 @@ const PACKAGES = [
   {
     title: "Single Serve",
     body: "One project, one outcome. Brand book refresh, a campaign launch, a website rebuild, an event execution. Scoped tight, delivered clean.",
-  },
-];
-
-/**
- * Per Collie's IMG_3036:
- *   Case studies: Port A Local · Palm Social · Palm Republic · PALMFEST · Sage Em
- *
- * Each follows IMG_3038 template (Challenge → Hook → Strategy → Outcome → CTA)
- * when expanded into a full case-study page in Phase 2.
- */
-const CASE_STUDIES = [
-  {
-    slug: "port-a-local",
-    title: "Port A Local",
-    kind: "Brand + Platform",
-    hook: "Coastal-town locals platform — brand identity + wheelhouse design for a community-first publication.",
-  },
-  {
-    slug: "palm-social-club",
-    title: "Palm Social Club",
-    kind: "Brand + Experience",
-    hook: "Hospitality brand identity built to live in a physical space, on screens, and in customer memory.",
-  },
-  {
-    slug: "palm-republic",
-    title: "Palm Republic",
-    kind: "Brand + Marketing",
-    hook: "Multi-channel brand presence connecting strategy, design, and execution across every customer touchpoint.",
-  },
-  {
-    slug: "palmfest",
-    title: "PALMFEST",
-    kind: "Event Design",
-    hook: "Concept-to-fruition event execution. The kind of weekend a customer talks about for a year.",
-  },
-  {
-    slug: "sage-em",
-    title: "Sage Em",
-    kind: "Brand + Systems",
-    hook: "Lighting rep agency brand and operations system — bridging creative with conversion at every product line.",
   },
 ];
 
