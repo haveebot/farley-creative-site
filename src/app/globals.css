@@ -67,6 +67,25 @@ html, body {
   );
 }
 
+/* Hero fade-in — CSS-only animation that runs on page load.
+ * Used above-the-fold where IntersectionObserver hydration is too slow. */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 700ms ease-out both;
+}
+.animate-fade-in-delayed {
+  animation: fade-in 700ms ease-out 200ms both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-in-delayed {
+    animation: none;
+  }
+}
+
 /* Reveal — restrained scroll-into-view fade+translate.
  * Brand kit calls for "light + airy + sun-touched feel" — this matches that
  * tone rather than dramatic parallax. */

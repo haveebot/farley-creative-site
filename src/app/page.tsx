@@ -19,19 +19,20 @@ export default function HomePage() {
     <main>
       <HeaderNav />
 
-      {/* HERO — black backdrop, butter-yellow wordmark, restrained */}
+      {/* HERO — black backdrop, butter-yellow wordmark, restrained.
+          Above-the-fold: render visible immediately (no Reveal). */}
       <section className="bg-warm-black text-cream min-h-[88vh] flex flex-col items-center justify-center px-6 py-20">
-        <Reveal className="max-w-3xl text-center">
-          <p className="font-serif italic text-butter-yellow text-5xl md:text-7xl tracking-tight">
+        <div className="max-w-3xl text-center">
+          <p className="font-serif italic text-butter-yellow text-5xl md:text-7xl tracking-tight animate-fade-in">
             farley
             <span className="font-sans not-italic font-bold text-cream">
               creative
             </span>
           </p>
-          <p className="mt-10 text-sm md:text-base tracking-[0.25em] uppercase text-cream/80">
+          <p className="mt-10 text-sm md:text-base tracking-[0.25em] uppercase text-cream/80 animate-fade-in-delayed">
             Bridges the gap between creative and conversion
           </p>
-        </Reveal>
+        </div>
       </section>
 
       {/* MEET COLLIE — first-person founder-operator framing */}
