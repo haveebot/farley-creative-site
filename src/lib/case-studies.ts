@@ -28,6 +28,8 @@ export type CaseStudy = {
   outcome: string[];
   cta: string;
   status: "live" | "placeholder";
+  live_url?: string; // public-facing URL if the brand is live
+  live_url_label?: string; // display label, defaults to the URL hostname
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -66,6 +68,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     cta:
       "Building a hyperlocal platform, community brand, or hospitality identity that needs to feel native to where it lives? Let's talk.",
     status: "live",
+    live_url: "https://theportalocal.com",
+    live_url_label: "theportalocal.com",
   },
   {
     slug: "palm-social-club",
@@ -208,6 +212,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     cta:
       "Running a founder-led B2B agency or rep firm that needs to feel as polished as the brands you represent? Let's talk.",
     status: "live",
+    live_url: "https://sageem.co",
+    live_url_label: "sageem.co",
   },
 ];
 

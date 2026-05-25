@@ -66,6 +66,18 @@ export default async function CaseStudyPage({
               {c.hook_short}
             </p>
 
+            {c.live_url && (
+              <a
+                href={c.live_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-8 px-5 py-2.5 bg-warm-black text-cream text-xs uppercase tracking-[0.2em] hover:bg-forest-teal transition"
+              >
+                Visit {c.live_url_label ?? c.live_url}
+                <span aria-hidden="true">↗</span>
+              </a>
+            )}
+
             <dl className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-warm-black/10">
               <div>
                 <dt className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-1">
