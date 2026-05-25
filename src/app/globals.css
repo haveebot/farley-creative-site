@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/*
+ * Brand tokens — mirror of the Hub's studio brand kit.
+ *
+ * Foundation (90% of designs):
+ *   --warm-black on --cream
+ *
+ * Accents (sparingly):
+ *   --butter-yellow → buttons, CTAs, "the click color"
+ *   --forest-teal   → brand anchor, section headers
+ *   --soft-mint     → tertiary backgrounds, soft section breaks
+ *   --dark-olive    → secondary text variant
+ *   --sand-taupe    → warm neutral fill
+ *   --light-gray    → cool neutral fill
+ */
+@theme {
+  --color-warm-black: #1B1410;
+  --color-cream: #EFECE2;
+  --color-butter-yellow: #F0EBA1;
+  --color-forest-teal: #3C5751;
+  --color-soft-mint: #CFE0D4;
+  --color-dark-olive: #3D3A28;
+  --color-sand-taupe: #D5CCBE;
+  --color-light-gray: #E2E0DD;
+
+  /* Semantic aliases */
+  --color-foreground: var(--color-warm-black);
+  --color-background: var(--color-cream);
+  --color-accent: var(--color-butter-yellow);
+  --color-anchor: var(--color-forest-teal);
+  --color-muted: #5C544E;
+
+  /* Typography */
+  --font-sans: "Montserrat", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Times New Roman", "Times", serif;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* Stripe motif — utility class for the recurring brand pattern */
+.stripe-motif {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-warm-black) 0,
+    var(--color-warm-black) 12px,
+    var(--color-cream) 12px,
+    var(--color-cream) 24px
+  );
+}
+.stripe-motif-soft {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-butter-yellow) 0,
+    var(--color-butter-yellow) 12px,
+    var(--color-cream) 12px,
+    var(--color-cream) 24px
+  );
+}
+
+/* Pull-quote treatment — Times italic with offset quote mark */
+.pull-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  position: relative;
+  padding-left: 1.5em;
+}
+.pull-quote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: -0.2em;
+  font-size: 2.5em;
+  line-height: 1;
+  color: var(--color-forest-teal);
+}
