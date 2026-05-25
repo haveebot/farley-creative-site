@@ -14,9 +14,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
-  { href: "/#packages", label: "Packages" },
+  { href: "/packages", label: "Packages" },
   { href: "/how-we-execute", label: "Process" },
   { href: "/contact", label: "Contact" },
 ];
@@ -183,8 +183,9 @@ export function SiteFooter() {
               Explore
             </p>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/about" className="hover:text-butter-yellow transition">About</Link></li>
               <li><Link href="/work" className="hover:text-butter-yellow transition">Work</Link></li>
-              <li><Link href="/#packages" className="hover:text-butter-yellow transition">Packages</Link></li>
+              <li><Link href="/packages" className="hover:text-butter-yellow transition">Packages</Link></li>
               <li><Link href="/how-we-execute" className="hover:text-butter-yellow transition">Process</Link></li>
               <li><Link href="/contact" className="hover:text-butter-yellow transition">Contact</Link></li>
             </ul>
