@@ -52,14 +52,26 @@ export default function WorkPage() {
                       coming soon
                     </span>
                   )}
+                  {c.live_url && (
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-butter-yellow bg-warm-black px-2 py-1 rounded-sm">
+                      ● Live
+                    </span>
+                  )}
                 </div>
                 <h2 className="text-2xl font-semibold mb-3">{c.title}</h2>
                 <p className="text-sm leading-relaxed text-warm-black/75 mb-6">
                   {c.hook_short}
                 </p>
-                <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition">
-                  Read case study →
-                </p>
+                <div className="flex items-baseline justify-between gap-4">
+                  <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition">
+                    Read case study →
+                  </p>
+                  {c.live_url && (
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-warm-black/70">
+                      {c.live_url_label}
+                    </span>
+                  )}
+                </div>
               </Link>
             ))}
           </div>

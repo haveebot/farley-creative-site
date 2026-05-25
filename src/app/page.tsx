@@ -99,18 +99,32 @@ export default function HomePage() {
               <Reveal key={c.slug} delay={i * 80}>
               <Link
                 href={`/work/${c.slug}`}
-                className="block border border-warm-black/15 bg-cream p-8 hover:border-forest-teal transition group h-full"
+                className="block border border-warm-black/15 bg-cream p-8 hover:border-forest-teal transition group h-full flex flex-col"
               >
-                <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-3">
-                  {c.kind}
-                </p>
+                <div className="flex items-baseline justify-between mb-3 gap-2">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal">
+                    {c.kind}
+                  </p>
+                  {c.live_url && (
+                    <span className="text-[9px] uppercase tracking-[0.2em] text-butter-yellow bg-warm-black px-2 py-1 rounded-sm shrink-0">
+                      ● Live
+                    </span>
+                  )}
+                </div>
                 <h3 className="text-xl font-semibold mb-3">{c.title}</h3>
-                <p className="text-sm leading-relaxed text-warm-black/75 mb-4">
+                <p className="text-sm leading-relaxed text-warm-black/75 mb-4 flex-1">
                   {c.hook_short}
                 </p>
-                <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition">
-                  Read case study →
-                </p>
+                <div className="flex items-baseline justify-between gap-3 mt-auto">
+                  <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition">
+                    Read case study →
+                  </p>
+                  {c.live_url && (
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-warm-black/70">
+                      {c.live_url_label}
+                    </span>
+                  )}
+                </div>
               </Link>
               </Reveal>
             ))}
