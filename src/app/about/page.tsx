@@ -92,6 +92,26 @@ export default function AboutPage() {
           </div>
         </article>
 
+        {/* Experience link */}
+        <section className="px-6 py-12 border-t border-warm-black/10">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-3">
+              The track record
+            </p>
+            <p className="text-base text-warm-black/75 leading-relaxed mb-6 max-w-xl mx-auto">
+              Selected client engagements, in-house leadership, and product
+              design across hospitality, retail, real estate, and heritage
+              brands.
+            </p>
+            <Link
+              href="/experience"
+              className="inline-block text-xs uppercase tracking-[0.25em] text-forest-teal border border-forest-teal px-6 py-3 hover:bg-forest-teal hover:text-cream transition"
+            >
+              See full experience →
+            </Link>
+          </div>
+        </section>
+
         {/* Quick links */}
         <section className="bg-soft-mint px-6 py-16 border-t border-warm-black/10">
           <div className="max-w-3xl mx-auto grid md:grid-cols-3 gap-8 text-center">
@@ -103,7 +123,7 @@ export default function AboutPage() {
                 Selected case studies →
               </p>
             </Link>
-            <Link href="/#packages" className="group">
+            <Link href="/packages" className="group">
               <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-2">
                 What we offer
               </p>

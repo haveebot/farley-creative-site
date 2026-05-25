@@ -185,6 +185,7 @@ export function SiteFooter() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="hover:text-butter-yellow transition">About</Link></li>
               <li><Link href="/work" className="hover:text-butter-yellow transition">Work</Link></li>
+              <li><Link href="/experience" className="hover:text-butter-yellow transition">Experience</Link></li>
               <li><Link href="/packages" className="hover:text-butter-yellow transition">Packages</Link></li>
               <li><Link href="/how-we-execute" className="hover:text-butter-yellow transition">Process</Link></li>
               <li><Link href="/contact" className="hover:text-butter-yellow transition">Contact</Link></li>
