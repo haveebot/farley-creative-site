@@ -1,19 +1,25 @@
 /**
- * /work/[slug] — case study detail.
- *
- * Renders Collie's 5-section template (IMG_3038):
- *   1. Challenge / Objective
- *   2. The Hook
- *   3. Strategy
- *   4. Outcome (Measurable)
- *   5. CTA for potential client
+ * /work/[slug] — case study detail. Editorial layout with image-led pacing:
+ *   1. Full-bleed hero
+ *   2. Title + hook + meta header
+ *   3. Challenge (text)
+ *   4. Image break — gallery[0]
+ *   5. The Hook (pull quote, centered)
+ *   6. Strategy (numbered list)
+ *   7. Image break — gallery[1+] (1-up, 2-up, or stacked depending on count)
+ *   8. Outcome (stat callouts on butter-yellow)
+ *   9. CTA band
  */
 
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
-import { CASE_STUDIES, getCaseStudy } from "@/lib/case-studies";
+import {
+  CASE_STUDIES,
+  getCaseStudy,
+  type GalleryImage,
+} from "@/lib/case-studies";
 
 export const dynamicParams = false;
 
@@ -35,6 +41,36 @@ export async function generateMetadata({
   };
 }
 
+function aspectClass(shape?: "wide" | "tall" | "square") {
+  if (shape === "tall") return "aspect-[4/5]";
+  if (shape === "square") return "aspect-square";
+  return "aspect-[21/9]";
+}
+
+function ImageBlock({
+  image,
+  sizes = "100vw",
+  bleed = true,
+}: {
+  image: GalleryImage;
+  sizes?: string;
+  bleed?: boolean;
+}) {
+  return (
+    <div
+      className={`relative w-full bg-warm-black/5 overflow-hidden ${aspectClass(image.shape)} ${bleed ? "" : "rounded-none"}`}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        sizes={sizes}
+        className={image.shape === "tall" ? "object-contain" : "object-cover"}
+      />
+    </div>
+  );
+}
+
 export default async function CaseStudyPage({
   params,
 }: {
@@ -44,70 +80,80 @@ export default async function CaseStudyPage({
   const c = getCaseStudy(slug);
   if (!c) notFound();
 
+  const [g0, ...gRest] = c.gallery ?? [];
+
   return (
     <>
       <HeaderNav />
       <main className="bg-cream text-warm-black">
-        {/* Hero image — full-width banner if provided */}
+        {/* HERO — full-bleed banner */}
         {c.hero && (
-          <div className="relative w-full bg-warm-black aspect-[16/7] md:aspect-[16/6] overflow-hidden">
+          <div className="relative w-full bg-warm-black aspect-[16/8] md:aspect-[21/9] overflow-hidden">
             <Image
               src={c.hero.src}
               alt={c.hero.alt}
               fill
               priority
               sizes="100vw"
-              className={c.hero.shape === "tall" ? "object-contain" : "object-cover"}
+              className={
+                c.hero.shape === "tall" ? "object-contain" : "object-cover"
+              }
             />
           </div>
         )}
 
-        {/* Hero text */}
-        <header className="px-6 pt-16 pb-16 border-b border-warm-black/10">
-          <div className="max-w-4xl mx-auto">
+        {/* HEADER — title, hook, meta */}
+        <header className="px-6 pt-16 md:pt-24 pb-16">
+          <div className="max-w-6xl mx-auto">
             <Link
               href="/work"
               className="text-xs uppercase tracking-[0.3em] text-forest-teal hover:text-warm-black transition"
             >
               ← Selected work
             </Link>
-            <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mt-8 mb-4">
-              {c.kind}
-            </p>
-            <h1 className="text-4xl md:text-6xl font-serif italic leading-tight mb-8">
-              {c.title}
-            </h1>
-            <p className="text-lg md:text-xl text-warm-black/80 leading-relaxed max-w-2xl">
-              {c.hook_short}
-            </p>
 
-            {c.live_url && (
-              <a
-                href={c.live_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-8 px-5 py-2.5 bg-warm-black text-cream text-xs uppercase tracking-[0.2em] hover:bg-forest-teal transition"
-              >
-                Visit {c.live_url_label ?? c.live_url}
-                <span aria-hidden="true">↗</span>
-              </a>
-            )}
+            <div className="mt-12 grid md:grid-cols-12 gap-8 md:gap-16 items-end">
+              <div className="md:col-span-7">
+                <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-4">
+                  {c.kind}
+                </p>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif italic leading-[1.05]">
+                  {c.title}
+                </h1>
+              </div>
+              <div className="md:col-span-5">
+                <p className="text-lg md:text-xl text-warm-black/80 leading-relaxed">
+                  {c.hook_short}
+                </p>
+                {c.live_url && (
+                  <a
+                    href={c.live_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-warm-black text-cream text-xs uppercase tracking-[0.2em] hover:bg-forest-teal transition"
+                  >
+                    Visit {c.live_url_label ?? c.live_url}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
+            </div>
 
-            <dl className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-warm-black/10">
+            <dl className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16 pt-8 border-t border-warm-black/10">
               <div>
-                <dt className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-1">
+                <dt className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-2">
                   Client
                 </dt>
                 <dd className="text-sm">{c.client}</dd>
               </div>
               <div>
-                <dt className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-1">
+                <dt className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-2">
                   Year
                 </dt>
                 <dd className="text-sm">{c.year}</dd>
               </div>
               <div className="col-span-2 md:col-span-1">
-                <dt className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-1">
+                <dt className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-2">
                   Scope
                 </dt>
                 <dd className="text-sm">{c.scope.join(" · ")}</dd>
@@ -116,79 +162,92 @@ export default async function CaseStudyPage({
           </div>
         </header>
 
-        {/* Body sections — Collie's template */}
-        <article className="px-6 py-24 space-y-20">
-          {c.status === "placeholder" && (
-            <div className="max-w-3xl mx-auto p-4 bg-soft-mint/40 border-l-2 border-forest-teal text-xs text-warm-black/70">
-              <strong className="font-medium">Note:</strong> case study content
-              in progress. Structural template shown; client-specific copy
-              lands once Collie supplies the source material.
-            </div>
-          )}
+        {/* CHALLENGE */}
+        <Section label="01" title="Challenge">
+          <p className="text-base md:text-lg leading-relaxed text-warm-black/85">
+            {c.challenge}
+          </p>
+        </Section>
 
-          <Section label="01" title="Challenge">
-            <p className="text-base md:text-lg leading-relaxed text-warm-black/85">
-              {c.challenge}
+        {/* IMAGE BREAK 1 — full-bleed */}
+        {g0 && (
+          <div className="mt-20 md:mt-28">
+            <ImageBlock image={g0} />
+          </div>
+        )}
+
+        {/* HOOK — editorial pull quote */}
+        <section className="px-6 py-20 md:py-28">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-8">
+              02 — The Hook
             </p>
-          </Section>
-
-          <Section label="02" title="The Hook">
-            <p className="text-base md:text-lg leading-relaxed text-warm-black/85 font-serif italic">
+            <blockquote className="text-2xl md:text-4xl font-serif italic leading-snug text-warm-black">
               {c.hook}
-            </p>
-          </Section>
+            </blockquote>
+          </div>
+        </section>
 
-          <Section label="03" title="Strategy">
-            <ul className="space-y-4">
-              {c.strategy.map((s, i) => (
-                <li key={i} className="flex gap-4">
-                  <span className="text-forest-teal text-xs font-medium mt-1.5 shrink-0 w-8">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-base md:text-lg leading-relaxed text-warm-black/85">
-                    {s}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </Section>
+        {/* STRATEGY */}
+        <Section label="03" title="Strategy">
+          <ul className="space-y-5">
+            {c.strategy.map((s, i) => (
+              <li key={i} className="flex gap-5">
+                <span className="text-forest-teal text-xs font-medium mt-1.5 shrink-0 w-8">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-base md:text-lg leading-relaxed text-warm-black/85">
+                  {s}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Section>
 
-          {c.gallery && c.gallery.length > 0 && (
-            <section className="max-w-5xl mx-auto">
-              <div className={`grid gap-4 ${c.gallery.length === 1 ? "grid-cols-1" : c.gallery.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
-                {c.gallery.map((g, i) => (
-                  <div
+        {/* IMAGE BREAK 2 — handles 1, 2, or 3+ remaining images */}
+        {gRest.length > 0 && <GalleryBreak images={gRest} />}
+
+        {/* OUTCOME — stat callouts on butter-yellow */}
+        <section className="bg-butter-yellow text-warm-black px-6 py-20 md:py-28 mt-20 md:mt-28">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-baseline gap-6 mb-12">
+              <span className="text-warm-black/60 text-xs font-medium tracking-widest">
+                04
+              </span>
+              <h2 className="text-2xl md:text-3xl font-serif italic">
+                Outcome
+              </h2>
+            </div>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+              {c.outcome.map((o, i) => {
+                const m = o.match(/^([\d.]+%)\s+(.+)/);
+                if (m) {
+                  return (
+                    <li
+                      key={i}
+                      className="border-l-2 border-warm-black/30 pl-5"
+                    >
+                      <p className="text-5xl md:text-6xl font-serif italic text-warm-black leading-none mb-3">
+                        {m[1]}
+                      </p>
+                      <p className="text-sm md:text-base text-warm-black/80 leading-snug">
+                        {m[2]}
+                      </p>
+                    </li>
+                  );
+                }
+                return (
+                  <li
                     key={i}
-                    className={`relative bg-warm-black/5 overflow-hidden ${
-                      g.shape === "tall" ? "aspect-[3/4]" : g.shape === "square" ? "aspect-square" : "aspect-[16/10]"
-                    }`}
+                    className="border-l-2 border-warm-black/30 pl-5 text-base md:text-lg leading-relaxed text-warm-black/85"
                   >
-                    <Image
-                      src={g.src}
-                      alt={g.alt}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className={g.shape === "tall" ? "object-contain" : "object-cover"}
-                    />
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          <Section label="04" title="Outcome">
-            <ul className="space-y-3">
-              {c.outcome.map((o, i) => (
-                <li
-                  key={i}
-                  className="border-l-2 border-butter-yellow pl-4 text-base md:text-lg leading-relaxed text-warm-black/85"
-                >
-                  {o}
-                </li>
-              ))}
+                    {o}
+                  </li>
+                );
+              })}
             </ul>
-          </Section>
-        </article>
+          </div>
+        </section>
 
         {/* CTA band */}
         <section className="bg-warm-black text-cream px-6 py-20">
@@ -208,10 +267,10 @@ export default async function CaseStudyPage({
           </div>
         </section>
 
-        {/* Other case studies */}
+        {/* More work */}
         <section className="bg-cream px-6 py-20 border-t border-warm-black/10">
           <div className="max-w-5xl mx-auto">
-            <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-6 text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-8 text-center">
               More work
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -220,7 +279,7 @@ export default async function CaseStudyPage({
                   <Link
                     key={other.slug}
                     href={`/work/${other.slug}`}
-                    className="block border border-warm-black/15 p-5 hover:border-forest-teal transition"
+                    className="block p-5 hover:bg-soft-mint/30 transition"
                   >
                     <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-2">
                       {other.kind}
@@ -248,14 +307,87 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="max-w-3xl mx-auto">
-      <div className="flex items-baseline gap-6 mb-8">
-        <span className="text-forest-teal text-xs font-medium tracking-widest">
-          {label}
-        </span>
-        <h2 className="text-2xl md:text-3xl font-serif italic">{title}</h2>
+    <section className="px-6 py-12 md:py-16">
+      <div className="max-w-3xl mx-auto">
+        <div className="flex items-baseline gap-6 mb-8">
+          <span className="text-forest-teal text-xs font-medium tracking-widest">
+            {label}
+          </span>
+          <h2 className="text-2xl md:text-3xl font-serif italic">{title}</h2>
+        </div>
+        {children}
       </div>
-      {children}
     </section>
+  );
+}
+
+function GalleryBreak({ images }: { images: GalleryImage[] }) {
+  if (images.length === 1) {
+    return (
+      <div className="mt-20 md:mt-28">
+        <ImageBlock image={images[0]} />
+      </div>
+    );
+  }
+
+  // 2 images: side-by-side
+  if (images.length === 2) {
+    return (
+      <div className="mt-20 md:mt-28 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          {images.map((g, i) => (
+            <div
+              key={i}
+              className={`relative bg-warm-black/5 overflow-hidden ${
+                g.shape === "tall"
+                  ? "aspect-[4/5]"
+                  : g.shape === "square"
+                    ? "aspect-square"
+                    : "aspect-[5/4]"
+              }`}
+            >
+              <Image
+                src={g.src}
+                alt={g.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // 3+ images: first as full-bleed, rest as 2-up grid below
+  return (
+    <div className="mt-20 md:mt-28">
+      <ImageBlock image={images[0]} />
+      <div className="px-6 mt-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          {images.slice(1).map((g, i) => (
+            <div
+              key={i}
+              className={`relative bg-warm-black/5 overflow-hidden ${
+                g.shape === "tall"
+                  ? "aspect-[4/5]"
+                  : g.shape === "square"
+                    ? "aspect-square"
+                    : "aspect-[5/4]"
+              }`}
+            >
+              <Image
+                src={g.src}
+                alt={g.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

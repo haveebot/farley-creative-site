@@ -130,14 +130,14 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     gallery: [
       {
-        src: "/work/palm-social-club/cocktails.png",
-        alt: "Palm Social Club cocktails on a velvet sofa with palm-leaf wallpaper",
+        src: "/work/palm-social-club/gallery-1.jpg",
+        alt: "The Palm Social Club venue exterior — white building with coral entry door and palm signage",
         shape: "tall",
       },
       {
-        src: "/work/palm-social-club/interiors.png",
-        alt: "Palm Social Club interior collage — atmosphere, plating, hospitality",
-        shape: "tall",
+        src: "/work/palm-social-club/gallery-2.jpg",
+        alt: "Four scenes from The Palm Social Club — neon sign with cocktail, tropical wallpaper with drinks, packed night crowd, aerial of striped umbrellas",
+        shape: "wide",
       },
     ],
   },
@@ -182,19 +182,19 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     gallery: [
       {
-        src: "/work/palm-republic/mobile.png",
-        alt: "The Palm Republic mobile site — palm-tree aerial with brand flag",
-        shape: "tall",
-      },
-      {
-        src: "/work/palm-republic/tshirt.png",
-        alt: "The Palm Republic t-shirt — white tee with palm flag logo",
-        shape: "tall",
-      },
-      {
-        src: "/work/palm-republic/retail.png",
-        alt: "The Palm Republic retail interior — flag display, palm-tree-decorated table, branded merchandise",
+        src: "/work/palm-republic/gallery-1.jpg",
+        alt: "The Palm Republic retail collage — caps, apparel, store interiors, and the brand color palette",
         shape: "wide",
+      },
+      {
+        src: "/work/palm-republic/gallery-2.jpg",
+        alt: "The Palm Republic flag flying over Port Aransas harbor with cargo ship in background",
+        shape: "square",
+      },
+      {
+        src: "/work/palm-republic/gallery-3.jpg",
+        alt: "Port Aransas palm flag patch on the back of a Palm Republic shirt",
+        shape: "square",
       },
     ],
   },
@@ -240,8 +240,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     gallery: [
       {
-        src: "/work/palmfest/aerial.png",
-        alt: "PALMFEST aerial — giant PALMFEST letter installation, crowd, festival tents",
+        src: "/work/palmfest/gallery-1.jpg",
+        alt: "PALMFEST giant letter installation with festival crowd at sunset",
+        shape: "wide",
+      },
+      {
+        src: "/work/palmfest/gallery-2.jpg",
+        alt: "PALMFEST scenes — main stage with crowd, music performances, sunset over the festival grounds",
         shape: "wide",
       },
     ],
@@ -326,6 +331,28 @@ export const CASE_STUDIES: CaseStudy[] = [
       alt: "Cinnamon Shore aerial — pastel beach houses lining the dunes, with surf in the foreground",
       shape: "wide",
     },
+    gallery: [
+      {
+        src: "/work/cinnamon-shore/gallery-1.jpg",
+        alt: "Cinnamon Shore beach houses panorama — pastel exteriors lined along the dunes",
+        shape: "wide",
+      },
+      {
+        src: "/work/cinnamon-shore/gallery-2.jpg",
+        alt: "Cinnamon Shore aerial — beach houses along the coast with palm trees and surf",
+        shape: "wide",
+      },
+      {
+        src: "/work/cinnamon-shore/gallery-3.jpg",
+        alt: "Cinnamon Shore brand book and color palette — coral, navy, sage, cream",
+        shape: "wide",
+      },
+      {
+        src: "/work/cinnamon-shore/gallery-4.jpg",
+        alt: "Cinnamon Shore marketing campaign creative — vacation rental cards in the resort brand",
+        shape: "wide",
+      },
+    ],
   },
 ];
 
