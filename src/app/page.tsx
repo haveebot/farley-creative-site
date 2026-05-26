@@ -20,52 +20,51 @@ export default function HomePage() {
     <main>
       <HeaderNav />
 
-      {/* HERO — black backdrop, butter-yellow wordmark, restrained.
+      {/* HERO — black backdrop, oversized wordmark per 2026-05-25 mockup.
           Above-the-fold: render visible immediately (no Reveal). */}
-      <section className="bg-warm-black text-cream min-h-[88vh] flex flex-col items-center justify-center px-6 py-20">
-        <div className="max-w-3xl text-center">
-          <p className="font-serif italic text-butter-yellow text-5xl md:text-7xl tracking-tight animate-fade-in">
-            farley
-            <span className="font-sans not-italic font-bold text-cream">
-              creative
-            </span>
+      <section className="bg-warm-black text-cream min-h-[60vh] flex flex-col items-center justify-center px-6 py-24 md:py-28">
+        <div className="w-full max-w-[1100px] text-center">
+          <p className="font-serif italic text-butter-yellow text-6xl sm:text-7xl md:text-[8rem] lg:text-[11rem] leading-none tracking-tight animate-fade-in">
+            farley<span className="font-sans not-italic font-bold text-cream">creative</span>
           </p>
-          <p className="mt-10 text-sm md:text-base tracking-[0.25em] uppercase text-cream/80 animate-fade-in-delayed">
+          <p className="mt-10 md:mt-12 text-[11px] sm:text-xs md:text-sm tracking-[0.32em] uppercase text-cream/80 animate-fade-in-delayed">
             Bridging the gap between creative and conversion
           </p>
         </div>
       </section>
 
-      {/* ABOUT — Collie's voice, lifted from her "About Us" asset (2026-05-25 PM) */}
+      {/* ABOUT — two-column with vertical butter-yellow stripe panel on the
+          right, About-page CTA pill overlaid on the stripes. Per mockup. */}
       <section id="about" className="bg-cream text-warm-black px-6 py-24">
-        <Reveal className="max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-6">
-            About
-          </p>
-          <h2 className="text-3xl md:text-5xl font-serif italic leading-tight mb-10">
-            Strategic marketing partners — zero fluff, immediate execution.
-          </h2>
-          <p className="text-base md:text-lg leading-relaxed mb-6">
-            Farley Creative bridges the gap between creative and conversion —
-            translating creative vision into scalable systems that connect
-            brand, space, events, and marketing. Founded by Collie Farley, with
-            experience spanning hospitality, retail, real estate, non-profit,
-            and lifestyle brands.
-          </p>
-          <p className="text-base md:text-lg leading-relaxed mb-8">
-            We blend the high-touch, fast-paced adaptability of a seasoned
-            freelancer with the founder-first perspective and comprehensive
-            power of a full-service agency. We&apos;ve mastered the art of
-            moving fast, testing what works, and pivoting strategies at the
-            rate of business.
-          </p>
-          <Link
-            href="/about"
-            className="inline-block text-xs uppercase tracking-[0.25em] text-forest-teal border border-forest-teal px-6 py-3 hover:bg-forest-teal hover:text-cream transition"
-          >
-            About →
-          </Link>
-        </Reveal>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-stretch">
+          <Reveal className="md:col-span-7">
+            <h2 className="text-3xl md:text-4xl font-serif italic leading-tight mb-10">
+              Strategic marketing partners — zero fluff, immediate execution.
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed mb-6">
+              Farley Creative bridges the gap between creative and conversion —
+              translating creative vision into scalable systems that connect
+              brand, space, events, and marketing. Founded by Collie Farley, with
+              experience spanning hospitality, retail, real estate, non-profit,
+              and lifestyle brands.
+            </p>
+            <p className="text-base md:text-lg leading-relaxed">
+              We blend the high-touch, fast-paced adaptability of a seasoned
+              freelancer with the founder-first perspective and comprehensive
+              power of a full-service agency. We&apos;ve mastered the art of
+              moving fast, testing what works, and pivoting strategies at the
+              rate of business.
+            </p>
+          </Reveal>
+          <div className="md:col-span-5 relative stripe-panel-butter min-h-[260px] md:min-h-[420px] flex items-center justify-center">
+            <Link
+              href="/about"
+              className="inline-block bg-cream text-forest-teal border border-forest-teal text-xs uppercase tracking-[0.28em] px-10 py-4 hover:bg-forest-teal hover:text-cream transition"
+            >
+              About →
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* SELECTED WORK — 6 case studies per Collie's mockup (PAL, PSC, Palm Republic, PALMFEST, Sage Em, Cinnamon Shore) */}
@@ -90,7 +89,7 @@ export default function HomePage() {
                 href={`/work/${c.slug}`}
                 className="block border border-warm-black/15 bg-cream hover:border-forest-teal transition group h-full flex flex-col overflow-hidden"
               >
-                {c.hero && (
+                {c.hero ? (
                   <div className="relative aspect-[16/10] bg-warm-black/5 overflow-hidden">
                     <Image
                       src={c.hero.src}
@@ -100,7 +99,13 @@ export default function HomePage() {
                       className={`${c.hero.shape === "tall" ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-500`}
                     />
                   </div>
-                )}
+                ) : c.feature_quote ? (
+                  <div className="aspect-[16/10] bg-forest-teal text-cream flex items-center px-6 md:px-8">
+                    <blockquote className="font-serif italic text-lg md:text-xl leading-snug whitespace-pre-line">
+                      {c.feature_quote}
+                    </blockquote>
+                  </div>
+                ) : null}
                 <div className="p-8 flex flex-col flex-1">
                 <div className="flex items-baseline justify-between mb-3 gap-2">
                   <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal">

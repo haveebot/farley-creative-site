@@ -36,6 +36,9 @@ export type CaseStudy = {
   live_url_label?: string; // display label, defaults to the URL hostname
   hero?: GalleryImage; // top-of-page hero image
   gallery?: GalleryImage[]; // additional images sprinkled through the case study
+  /** Alternative to hero image — renders the card's photo-area as a Forest Teal
+   *  panel with this quote text. Used for Sage Em per home page mockup. */
+  feature_quote?: string;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -276,6 +279,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     live_url: "https://sageem.co",
     live_url_label: "sageem.co",
+    feature_quote:
+      "One system.\nEvery building.\nEngineered for the speed of growth & projects.",
   },
   {
     slug: "cinnamon-shore",
