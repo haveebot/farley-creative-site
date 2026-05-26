@@ -1,5 +1,5 @@
 /**
- * /work — case study index. All 5 cards link to the detail page.
+ * /work — case study index. All cards link to the detail page.
  */
 
 import Image from "next/image";
@@ -28,10 +28,9 @@ export default function WorkPage() {
               events.
             </h1>
             <p className="mt-8 text-base md:text-lg max-w-2xl text-warm-black/75 leading-relaxed">
-              Five projects. Hospitality, real estate, community publishing,
-              event design, and B2B systems. Different scopes, same operating
-              principle: every brand artifact gets the polish of the firm
-              itself.
+              Hospitality, real estate, community publishing, event design, and
+              B2B systems. Different scopes, same operating principle: every
+              brand artifact gets the polish of the firm itself.
             </p>
           </div>
         </header>
