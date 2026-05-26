@@ -39,6 +39,9 @@ export type CaseStudy = {
   /** Alternative to hero image — renders the card's photo-area as a Forest Teal
    *  panel with this quote text. Used for Sage Em per home page mockup. */
   feature_quote?: string;
+  /** When true, the home-page tile renders photo + title only (no eyebrow,
+   *  body, or read-case-study link). Used for Cinnamon Shore per mockup. */
+  card_minimal?: boolean;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -280,7 +283,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     live_url: "https://sageem.co",
     live_url_label: "sageem.co",
     feature_quote:
-      "One system.\nEvery building.\nEngineered for the speed of growth & projects.",
+      "One system.\nEvery building.\nEngineered for the spaces it protects.",
   },
   {
     slug: "cinnamon-shore",
@@ -318,6 +321,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     cta:
       "Standing up the marketing function for a hospitality, real estate, or growth-stage brand — and you want someone to own the brand-and-system integration, not just one channel? Let's talk.",
     status: "live",
+    card_minimal: true,
   },
 ];
 

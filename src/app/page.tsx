@@ -20,46 +20,47 @@ export default function HomePage() {
     <main>
       <HeaderNav />
 
-      {/* HERO — black backdrop, oversized wordmark per 2026-05-25 mockup.
-          Above-the-fold: render visible immediately (no Reveal). */}
-      <section className="bg-warm-black text-cream min-h-[60vh] flex flex-col items-center justify-center px-6 py-24 md:py-28">
-        <div className="w-full max-w-[1100px] text-center">
-          <p className="font-serif italic text-butter-yellow text-6xl sm:text-7xl md:text-[8rem] lg:text-[11rem] leading-none tracking-tight animate-fade-in">
+      {/* HERO — black band, centered wordmark + spaced-caps tagline. */}
+      <section className="bg-warm-black text-cream flex flex-col items-center justify-center px-6 py-24 md:py-32">
+        <div className="text-center">
+          <p className="font-serif italic text-butter-yellow text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-tight animate-fade-in">
             farley<span className="font-sans not-italic font-bold text-cream">creative</span>
           </p>
-          <p className="mt-10 md:mt-12 text-[11px] sm:text-xs md:text-sm tracking-[0.32em] uppercase text-cream/80 animate-fade-in-delayed">
+          <p className="mt-8 md:mt-10 text-[11px] sm:text-xs md:text-sm tracking-[0.32em] uppercase text-cream/85 animate-fade-in-delayed">
             Bridging the gap between creative and conversion
           </p>
         </div>
       </section>
 
-      {/* ABOUT — two-column with vertical butter-yellow stripe panel on the
-          right, About-page CTA pill overlaid on the stripes. Per mockup. */}
-      <section id="about" className="bg-cream text-warm-black px-6 py-24">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-stretch">
-          <Reveal className="md:col-span-7">
-            <h2 className="text-3xl md:text-4xl font-serif italic leading-tight mb-10">
-              Strategic marketing partners — zero fluff, immediate execution.
-            </h2>
-            <p className="text-base md:text-lg leading-relaxed mb-6">
-              Farley Creative bridges the gap between creative and conversion —
-              translating creative vision into scalable systems that connect
-              brand, space, events, and marketing. Founded by Collie Farley, with
-              experience spanning hospitality, retail, real estate, non-profit,
-              and lifestyle brands.
-            </p>
-            <p className="text-base md:text-lg leading-relaxed">
-              We blend the high-touch, fast-paced adaptability of a seasoned
-              freelancer with the founder-first perspective and comprehensive
-              power of a full-service agency. We&apos;ve mastered the art of
-              moving fast, testing what works, and pivoting strategies at the
-              rate of business.
-            </p>
+      {/* ABOUT — full-bleed two-column: butter-yellow body on left, vertical
+          cream+butter stripe panel on right, soft-mint pill CTA overlaid. */}
+      <section id="about" className="text-warm-black">
+        <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
+          <Reveal className="md:col-span-8 bg-butter-yellow px-6 md:px-16 py-20 md:py-24">
+            <div className="max-w-2xl ml-auto">
+              <h2 className="text-3xl md:text-4xl font-serif italic leading-tight mb-10">
+                Strategic marketing partners — zero fluff, immediate execution.
+              </h2>
+              <p className="text-base md:text-lg leading-relaxed mb-6">
+                Farley Creative bridges the gap between creative and conversion —
+                translating creative vision into scalable systems that connect
+                brand, space, events, and marketing. Founded by Collie Farley, with
+                experience spanning hospitality, retail, real estate, non-profit,
+                and lifestyle brands.
+              </p>
+              <p className="text-base md:text-lg leading-relaxed">
+                We blend the high-touch, fast-paced adaptability of a seasoned
+                freelancer with the founder-first perspective and comprehensive
+                power of a full-service agency. We&apos;ve mastered the art of
+                moving fast, testing what works, and pivoting strategies at the
+                rate of business.
+              </p>
+            </div>
           </Reveal>
-          <div className="md:col-span-5 relative stripe-panel-butter min-h-[260px] md:min-h-[420px] flex items-center justify-center">
+          <div className="md:col-span-4 relative stripe-panel-butter min-h-[220px] md:min-h-0 flex items-center justify-center py-12 md:py-0">
             <Link
               href="/about"
-              className="inline-block bg-cream text-forest-teal border border-forest-teal text-xs uppercase tracking-[0.28em] px-10 py-4 hover:bg-forest-teal hover:text-cream transition"
+              className="inline-block bg-soft-mint text-forest-teal text-xs md:text-sm uppercase tracking-[0.28em] px-10 py-5 hover:bg-forest-teal hover:text-cream transition shadow-sm"
             >
               About →
             </Link>
@@ -82,15 +83,15 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
             {CASE_STUDIES.map((c, i) => (
               <Reveal key={c.slug} delay={i * 80}>
               <Link
                 href={`/work/${c.slug}`}
-                className="block border border-warm-black/15 bg-cream hover:border-forest-teal transition group h-full flex flex-col overflow-hidden"
+                className="block group h-full flex flex-col"
               >
                 {c.hero ? (
-                  <div className="relative aspect-[16/10] bg-warm-black/5 overflow-hidden">
+                  <div className="relative aspect-[5/4] bg-warm-black/5 overflow-hidden">
                     <Image
                       src={c.hero.src}
                       alt={c.hero.alt}
@@ -100,38 +101,46 @@ export default function HomePage() {
                     />
                   </div>
                 ) : c.feature_quote ? (
-                  <div className="aspect-[16/10] bg-forest-teal text-cream flex items-center px-6 md:px-8">
-                    <blockquote className="font-serif italic text-lg md:text-xl leading-snug whitespace-pre-line">
+                  <div className="aspect-[5/4] bg-forest-teal text-butter-yellow flex items-center px-8 md:px-10">
+                    <blockquote className="font-serif italic text-lg md:text-2xl leading-snug whitespace-pre-line">
                       {c.feature_quote}
                     </blockquote>
                   </div>
-                ) : null}
-                <div className="p-8 flex flex-col flex-1">
-                <div className="flex items-baseline justify-between mb-3 gap-2">
-                  <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal">
-                    {c.kind}
-                  </p>
-                  {c.live_url && (
-                    <span className="text-[9px] uppercase tracking-[0.2em] text-butter-yellow bg-warm-black px-2 py-1 rounded-sm shrink-0">
-                      ● Live
-                    </span>
-                  )}
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{c.title}</h3>
-                <p className="text-sm leading-relaxed text-warm-black/75 mb-4 flex-1">
-                  {c.hook_short}
-                </p>
-                <div className="flex items-baseline justify-between gap-3 mt-auto">
-                  <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition">
-                    Read case study →
-                  </p>
-                  {c.live_url && (
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-warm-black/70">
-                      {c.live_url_label}
-                    </span>
-                  )}
-                </div>
-                </div>
+                ) : (
+                  <div className="aspect-[5/4] bg-warm-black/5"></div>
+                )}
+                {c.card_minimal ? (
+                  <div className="pt-6 pb-2">
+                    <h3 className="text-xl md:text-2xl font-semibold">{c.title}</h3>
+                  </div>
+                ) : (
+                  <div className="pt-6 flex flex-col flex-1">
+                    <div className="flex items-baseline justify-between mb-3 gap-2">
+                      <p className="text-[10px] uppercase tracking-[0.25em] text-warm-black/70">
+                        {c.kind}
+                      </p>
+                      {c.live_url && (
+                        <span className="text-[9px] uppercase tracking-[0.2em] text-butter-yellow bg-warm-black px-2 py-1 rounded-sm shrink-0">
+                          ● Live
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-3">{c.title}</h3>
+                    <p className="text-sm md:text-base leading-relaxed text-warm-black/80 mb-5 flex-1">
+                      {c.hook_short}
+                    </p>
+                    <div className="flex items-baseline justify-between gap-3 mt-auto">
+                      <p className="text-xs italic text-warm-black/60 group-hover:text-forest-teal transition">
+                        Read case study →
+                      </p>
+                      {c.live_url && (
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-warm-black/60">
+                          {c.live_url_label}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )}
               </Link>
               </Reveal>
             ))}
