@@ -9,6 +9,7 @@
  * so each one can be a deeper page later.
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
 import { Reveal } from "@/components/Reveal";
@@ -99,8 +100,20 @@ export default function HomePage() {
               <Reveal key={c.slug} delay={i * 80}>
               <Link
                 href={`/work/${c.slug}`}
-                className="block border border-warm-black/15 bg-cream p-8 hover:border-forest-teal transition group h-full flex flex-col"
+                className="block border border-warm-black/15 bg-cream hover:border-forest-teal transition group h-full flex flex-col overflow-hidden"
               >
+                {c.hero && (
+                  <div className="relative aspect-[16/10] bg-warm-black/5 overflow-hidden">
+                    <Image
+                      src={c.hero.src}
+                      alt={c.hero.alt}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className={`${c.hero.shape === "tall" ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-500`}
+                    />
+                  </div>
+                )}
+                <div className="p-8 flex flex-col flex-1">
                 <div className="flex items-baseline justify-between mb-3 gap-2">
                   <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal">
                     {c.kind}
@@ -124,6 +137,7 @@ export default function HomePage() {
                       {c.live_url_label}
                     </span>
                   )}
+                </div>
                 </div>
               </Link>
               </Reveal>

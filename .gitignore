@@ -6,3 +6,6 @@ out
 .DS_Store
 *.tsbuildinfo
 next-env.d.ts
+
+# Source images scraped from old Canva site — only the chosen ones go in public/
+portfolio-source/

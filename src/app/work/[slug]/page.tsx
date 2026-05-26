@@ -9,6 +9,7 @@
  *   5. CTA for potential client
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
@@ -47,8 +48,22 @@ export default async function CaseStudyPage({
     <>
       <HeaderNav />
       <main className="bg-cream text-warm-black">
-        {/* Hero */}
-        <header className="px-6 pt-24 pb-16 border-b border-warm-black/10">
+        {/* Hero image — full-width banner if provided */}
+        {c.hero && (
+          <div className="relative w-full bg-warm-black aspect-[16/7] md:aspect-[16/6] overflow-hidden">
+            <Image
+              src={c.hero.src}
+              alt={c.hero.alt}
+              fill
+              priority
+              sizes="100vw"
+              className={c.hero.shape === "tall" ? "object-contain" : "object-cover"}
+            />
+          </div>
+        )}
+
+        {/* Hero text */}
+        <header className="px-6 pt-16 pb-16 border-b border-warm-black/10">
           <div className="max-w-4xl mx-auto">
             <Link
               href="/work"
@@ -137,6 +152,29 @@ export default async function CaseStudyPage({
               ))}
             </ul>
           </Section>
+
+          {c.gallery && c.gallery.length > 0 && (
+            <section className="max-w-5xl mx-auto">
+              <div className={`grid gap-4 ${c.gallery.length === 1 ? "grid-cols-1" : c.gallery.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
+                {c.gallery.map((g, i) => (
+                  <div
+                    key={i}
+                    className={`relative bg-warm-black/5 overflow-hidden ${
+                      g.shape === "tall" ? "aspect-[3/4]" : g.shape === "square" ? "aspect-square" : "aspect-[16/10]"
+                    }`}
+                  >
+                    <Image
+                      src={g.src}
+                      alt={g.alt}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className={g.shape === "tall" ? "object-contain" : "object-cover"}
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           <Section label="04" title="Outcome">
             <ul className="space-y-3">

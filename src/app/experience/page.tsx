@@ -7,6 +7,7 @@
  * without diluting the case study product.
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
 import { EXPERIENCE_CATEGORIES } from "@/lib/experience";
@@ -66,10 +67,22 @@ export default function ExperiencePage() {
                     key={entry.slug}
                     className={`${
                       entry.featured
-                        ? "p-8 border border-warm-black/15 bg-cream"
+                        ? "border border-warm-black/15 bg-cream overflow-hidden"
                         : "p-6 border-l-2 border-forest-teal pl-6"
                     }`}
                   >
+                    {entry.featured && entry.image && (
+                      <div className="relative aspect-[16/9] bg-warm-black/5 overflow-hidden">
+                        <Image
+                          src={entry.image.src}
+                          alt={entry.image.alt}
+                          fill
+                          sizes="(min-width: 1024px) 60vw, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className={entry.featured ? "p-8" : ""}>
                     <header className="mb-3">
                       <h3 className={`${entry.featured ? "text-2xl" : "text-xl"} font-semibold mb-1`}>
                         {entry.name}
@@ -98,6 +111,7 @@ export default function ExperiencePage() {
                         ))}
                       </ul>
                     )}
+                    </div>
                   </article>
                 ))}
               </div>

@@ -2,6 +2,7 @@
  * /work — case study index. All 5 cards link to the detail page.
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
 import { CASE_STUDIES } from "@/lib/case-studies";
@@ -41,8 +42,20 @@ export default function WorkPage() {
               <Link
                 key={c.slug}
                 href={`/work/${c.slug}`}
-                className="block border border-warm-black/15 bg-cream p-8 hover:border-forest-teal transition group"
+                className="block border border-warm-black/15 bg-cream hover:border-forest-teal transition group overflow-hidden"
               >
+                {c.hero && (
+                  <div className="relative aspect-[16/10] bg-warm-black/5 overflow-hidden">
+                    <Image
+                      src={c.hero.src}
+                      alt={c.hero.alt}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className={`${c.hero.shape === "tall" ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-500`}
+                    />
+                  </div>
+                )}
+                <div className="p-8">
                 <div className="flex items-baseline justify-between mb-4">
                   <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal">
                     {c.kind}
@@ -71,6 +84,7 @@ export default function WorkPage() {
                       {c.live_url_label}
                     </span>
                   )}
+                </div>
                 </div>
               </Link>
             ))}

@@ -22,6 +22,7 @@ export type ExperienceEntry = {
   highlights?: string[]; // measurable outcomes / specific work
   detail?: string; // longer paragraph if useful
   featured?: boolean; // gets bigger treatment
+  image?: { src: string; alt: string };
 };
 
 export type ExperienceCategory = {
@@ -53,6 +54,10 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
           "Brand applied across digital, signage, and print",
         ],
         featured: true,
+        image: {
+          src: "/work/rk-projects/hero.png",
+          alt: "RK Projects Port Aransas mobile site — luxury custom home builders, kitchen interior",
+        },
       },
     ],
   },
@@ -77,6 +82,10 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
           "Built scalable marketing foundation + improved team alignment",
         ],
         featured: true,
+        image: {
+          src: "/experience/cinnamon-shore/hero.png",
+          alt: "Cinnamon Shore community aerial — white coastal homes on the Texas Gulf",
+        },
       },
     ],
   },

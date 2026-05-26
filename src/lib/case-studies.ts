@@ -14,6 +14,13 @@
  * three are "placeholder" awaiting Collie's client material.
  */
 
+export type GalleryImage = {
+  src: string;
+  alt: string;
+  /** "wide" = aspect 16:9-ish, "tall" = portrait, "square" = ~1:1 */
+  shape?: "wide" | "tall" | "square";
+};
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -30,6 +37,8 @@ export type CaseStudy = {
   status: "live" | "placeholder";
   live_url?: string; // public-facing URL if the brand is live
   live_url_label?: string; // display label, defaults to the URL hostname
+  hero?: GalleryImage; // top-of-page hero image
+  gallery?: GalleryImage[]; // additional images sprinkled through the case study
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -70,6 +79,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     live_url: "https://theportalocal.com",
     live_url_label: "theportalocal.com",
+    hero: {
+      src: "/work/port-a-local/hero.png",
+      alt: "Port Aransas coastal aerial at sunset — marshes and Gulf Coast",
+      shape: "wide",
+    },
   },
   {
     slug: "palm-social-club",
@@ -106,6 +120,23 @@ export const CASE_STUDIES: CaseStudy[] = [
     cta:
       "Building a hospitality brand where the venue, the brand, and the experience need to feel like one decision? Let's talk.",
     status: "live",
+    hero: {
+      src: "/work/palm-social-club/hero.png",
+      alt: "The Palm Social Club brand pack — color palette, signage, venue, live music",
+      shape: "tall",
+    },
+    gallery: [
+      {
+        src: "/work/palm-social-club/cocktails.png",
+        alt: "Palm Social Club cocktails on a velvet sofa with palm-leaf wallpaper",
+        shape: "tall",
+      },
+      {
+        src: "/work/palm-social-club/interiors.png",
+        alt: "Palm Social Club interior collage — atmosphere, plating, hospitality",
+        shape: "tall",
+      },
+    ],
   },
   {
     slug: "palm-republic",
@@ -141,6 +172,28 @@ export const CASE_STUDIES: CaseStudy[] = [
     cta:
       "Building a lifestyle brand that needs to stand for something beyond what it sells? Let's talk.",
     status: "live",
+    hero: {
+      src: "/work/palm-republic/hero.png",
+      alt: "The Palm Republic e-commerce site on a laptop — aerial beach with palm flag logo",
+      shape: "wide",
+    },
+    gallery: [
+      {
+        src: "/work/palm-republic/mobile.png",
+        alt: "The Palm Republic mobile site — palm-tree aerial with brand flag",
+        shape: "tall",
+      },
+      {
+        src: "/work/palm-republic/tshirt.png",
+        alt: "The Palm Republic t-shirt — white tee with palm flag logo",
+        shape: "tall",
+      },
+      {
+        src: "/work/palm-republic/retail.png",
+        alt: "The Palm Republic retail interior — flag display, palm-tree-decorated table, branded merchandise",
+        shape: "wide",
+      },
+    ],
   },
   {
     slug: "palmfest",
@@ -177,6 +230,18 @@ export const CASE_STUDIES: CaseStudy[] = [
     cta:
       "Building a brand for an event — and you want the brand to scale with the event year over year? Let's talk.",
     status: "live",
+    hero: {
+      src: "/work/palmfest/hero.png",
+      alt: "PALMFEST main stage at sunset — crowd, palm trees, festival branding",
+      shape: "wide",
+    },
+    gallery: [
+      {
+        src: "/work/palmfest/aerial.png",
+        alt: "PALMFEST aerial — giant PALMFEST letter installation, crowd, festival tents",
+        shape: "wide",
+      },
+    ],
   },
   {
     slug: "sage-em",
