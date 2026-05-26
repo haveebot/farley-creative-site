@@ -292,7 +292,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/cinnamon-shore/hero.jpg",
-      alt: "Cinnamon Shore aerial — pastel beach houses lining the dunes, with surf in the foreground",
+      alt: "Cinnamon Shore — pastel sunset over the coastal community, beach houses lining the dunes with surf in the foreground",
       shape: "wide",
     },
   },
