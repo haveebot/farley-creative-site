@@ -170,7 +170,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/palm-republic/hero.jpg",
-      alt: "The Palm Republic — heather-grey trucker cap with Port Aransas flag patch, sitting on coastal rocks",
+      alt: "The Palm Republic flag — palm tree on navy, seafoam, and orange flying over Port Aransas harbor with a cargo ship in the background",
       shape: "wide",
     },
   },
