@@ -7,11 +7,8 @@
  *   4. Outcome (Measurable)
  *   5. CTA for potential client
  *
- * Five projects per her IMG_3036:
- *   Port A Local · Palm Social Club · Palm Republic · PALMFEST · Sage Em
- *
- * Two are "live" (Port A Local + Sage Em — projects Heye Lab built);
- * three are "placeholder" awaiting Collie's client material.
+ * Six projects per her 2026-05-25 home page mockup:
+ *   Port A Local · Palm Social Club · Palm Republic · PALMFEST · Sage Em · Cinnamon Shore
  */
 
 export type GalleryImage = {
@@ -37,8 +34,21 @@ export type CaseStudy = {
   status: "live" | "placeholder";
   live_url?: string; // public-facing URL if the brand is live
   live_url_label?: string; // display label, defaults to the URL hostname
-  hero?: GalleryImage; // top-of-page hero image
+  hero?: GalleryImage; // tile / card preview image (used on home + /work index)
+  /** Designed banner shown at the TOP of the case study page only. Falls back
+   *  to `hero` if not set. Distinct from `hero` so tiles + page banner can be
+   *  different sources. */
+  header_banner?: GalleryImage;
   gallery?: GalleryImage[]; // additional images sprinkled through the case study
+  /** Alternative to hero image — renders the card's photo-area as a Forest Teal
+   *  panel with this quote text. Used for Sage Em per home page mockup. */
+  feature_quote?: string;
+  /** When true, the home-page tile renders photo + title only (no eyebrow,
+   *  body, or read-case-study link). Used for Cinnamon Shore per mockup. */
+  card_minimal?: boolean;
+  /** When true, the case study detail page skips the H1 title because the
+   *  header banner already contains the title typography. */
+  header_has_title?: boolean;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -80,10 +90,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     live_url: "https://theportalocal.com",
     live_url_label: "theportalocal.com",
     hero: {
-      src: "/work/port-a-local/hero.png",
-      alt: "Port Aransas coastal aerial at sunset — marshes and Gulf Coast",
+      src: "/work/port-a-local/hero.jpg",
+      alt: "Port A Local — aerial coastal sunset",
       shape: "wide",
     },
+    header_banner: {
+      src: "/work/port-a-local/header-banner.jpg",
+      alt: "Port A Local — aerial drone shot of the Port Aransas pier and Gulf surf with coral lighthouse mark and tagline 'Discover Port Aransas Like a Local'",
+      shape: "wide",
+    },
+    header_has_title: true,
   },
   {
     slug: "palm-social-club",
@@ -121,22 +137,16 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Building a hospitality brand where the venue, the brand, and the experience need to feel like one decision? Let's talk.",
     status: "live",
     hero: {
-      src: "/work/palm-social-club/hero.png",
-      alt: "The Palm Social Club brand pack — color palette, signage, venue, live music",
-      shape: "tall",
+      src: "/work/palm-social-club/hero.jpg",
+      alt: "The Palm Social Club — green wood-slat sign with gold lettering and three signature cocktails on the bar",
+      shape: "wide",
     },
-    gallery: [
-      {
-        src: "/work/palm-social-club/cocktails.png",
-        alt: "Palm Social Club cocktails on a velvet sofa with palm-leaf wallpaper",
-        shape: "tall",
-      },
-      {
-        src: "/work/palm-social-club/interiors.png",
-        alt: "Palm Social Club interior collage — atmosphere, plating, hospitality",
-        shape: "tall",
-      },
-    ],
+    header_banner: {
+      src: "/work/palm-social-club/header-banner.jpg",
+      alt: "The Palm Social Club — tropical-wallpaper lounge interior with velvet sofa, throw pillows, mimosas on the table, and the PSC wordmark overlaid",
+      shape: "wide",
+    },
+    header_has_title: true,
   },
   {
     slug: "palm-republic",
@@ -173,27 +183,15 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Building a lifestyle brand that needs to stand for something beyond what it sells? Let's talk.",
     status: "live",
     hero: {
-      src: "/work/palm-republic/hero.png",
-      alt: "The Palm Republic e-commerce site on a laptop — aerial beach with palm flag logo",
+      src: "/work/palm-republic/hero.jpg",
+      alt: "The Palm Republic — heather-grey trucker cap with Port Aransas flag patch sitting on coastal rocks",
       shape: "wide",
     },
-    gallery: [
-      {
-        src: "/work/palm-republic/mobile.png",
-        alt: "The Palm Republic mobile site — palm-tree aerial with brand flag",
-        shape: "tall",
-      },
-      {
-        src: "/work/palm-republic/tshirt.png",
-        alt: "The Palm Republic t-shirt — white tee with palm flag logo",
-        shape: "tall",
-      },
-      {
-        src: "/work/palm-republic/retail.png",
-        alt: "The Palm Republic retail interior — flag display, palm-tree-decorated table, branded merchandise",
-        shape: "wide",
-      },
-    ],
+    header_banner: {
+      src: "/work/palm-republic/header-banner.jpg",
+      alt: "The Palm Republic flag — palm tree on navy, seafoam, and orange flying over Port Aransas harbor with a cargo ship in the background",
+      shape: "wide",
+    },
   },
   {
     slug: "palmfest",
@@ -231,17 +229,15 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Building a brand for an event — and you want the brand to scale with the event year over year? Let's talk.",
     status: "live",
     hero: {
-      src: "/work/palmfest/hero.png",
-      alt: "PALMFEST main stage at sunset — crowd, palm trees, festival branding",
+      src: "/work/palmfest/hero.jpg",
+      alt: "PALMFEST main stage with giant letter installation, festival crowd, palm trees, and the Gulf in the background",
       shape: "wide",
     },
-    gallery: [
-      {
-        src: "/work/palmfest/aerial.png",
-        alt: "PALMFEST aerial — giant PALMFEST letter installation, crowd, festival tents",
-        shape: "wide",
-      },
-    ],
+    header_banner: {
+      src: "/work/palmfest/header-banner.jpg",
+      alt: "PALMFEST aerial — main stage with PALMFEST banner, crowd around the giant PALMFEST letter installation, white tents, palm trees, and the Gulf",
+      shape: "wide",
+    },
   },
   {
     slug: "sage-em",
@@ -279,6 +275,55 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     live_url: "https://sageem.co",
     live_url_label: "sageem.co",
+    feature_quote:
+      "One system.\nEvery building.\nEngineered for the spaces it protects.",
+  },
+  {
+    slug: "cinnamon-shore",
+    title: "Cinnamon Shore",
+    kind: "Hospitality + Real Estate",
+    client: "Cinnamon Shore Resort & Realty · Port Aransas, TX",
+    year: "2015–2017",
+    scope: [
+      "Brand transformation",
+      "Marketing strategy",
+      "In-house team build",
+      "Agency direction",
+      "Performance + paid marketing",
+    ],
+    hook_short:
+      "Brand and marketing transformation for a luxury coastal resort + real estate brand — aligning identity, messaging, and customer experience to support scalable growth.",
+    challenge:
+      "A luxury coastal resort and real estate brand on the Texas Gulf Coast with no cohesive brand identity, fragmented marketing across channels, and no internal marketing team structure or agency partner. Growth was capped not by demand but by the absence of a unified system to convert it.",
+    hook:
+      "Build the brand-and-marketing system the company should have started with — identity, team, agency partner, and performance discipline as one decision. Most growth-stage hospitality brands try to bolt marketing on piece by piece (an ad agency here, a freelance designer there). The Cinnamon Shore engagement proved the inverse: stand up the entire system at once, with one operator holding the integration line, and the channels start compounding inside a year.",
+    strategy: [
+      "Led brand transformation — aligned identity, messaging, and customer experience as one scalable visual + messaging system",
+      "Built a dynamic in-house marketing team from scratch",
+      "Sourced and hired the right creative agency partner; directed agency work across paid, social, email, and web",
+      "Defined positioning and growth strategy at the leadership level",
+      "Oversaw digital, paid, and performance execution end-to-end — improving acquisition, conversion, and overall performance",
+    ],
+    outcome: [
+      "37% increase in total revenue",
+      "68% of bookings tracked to web marketing campaign efforts",
+      "224% increase in call volume",
+      "Scalable marketing foundation built — internal team + agency partnership + performance discipline operating as one system",
+      "Strengthened customer journey and unified brand experience across channels",
+    ],
+    cta:
+      "Standing up the marketing function for a hospitality, real estate, or growth-stage brand — and you want someone to own the brand-and-system integration, not just one channel? Let's talk.",
+    status: "live",
+    hero: {
+      src: "/work/cinnamon-shore/hero.jpg",
+      alt: "Cinnamon Shore aerial — pastel beach houses lining the dunes with surf in the foreground",
+      shape: "wide",
+    },
+    header_banner: {
+      src: "/work/cinnamon-shore/header-banner.jpg",
+      alt: "Cinnamon Shore — pastel sunset over the coastal community, beach houses lining the dunes with surf in the foreground",
+      shape: "wide",
+    },
   },
 ];
 

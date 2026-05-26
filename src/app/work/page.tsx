@@ -44,7 +44,7 @@ export default function WorkPage() {
                 href={`/work/${c.slug}`}
                 className="block border border-warm-black/15 bg-cream hover:border-forest-teal transition group overflow-hidden"
               >
-                {c.hero && (
+                {c.hero ? (
                   <div className="relative aspect-[16/10] bg-warm-black/5 overflow-hidden">
                     <Image
                       src={c.hero.src}
@@ -54,37 +54,24 @@ export default function WorkPage() {
                       className={`${c.hero.shape === "tall" ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-500`}
                     />
                   </div>
-                )}
+                ) : c.feature_quote ? (
+                  <div className="aspect-[16/10] bg-forest-teal text-butter-yellow flex items-center px-8 md:px-10">
+                    <blockquote className="font-serif italic text-lg md:text-2xl leading-snug whitespace-pre-line">
+                      {c.feature_quote}
+                    </blockquote>
+                  </div>
+                ) : null}
                 <div className="p-8">
-                <div className="flex items-baseline justify-between mb-4">
-                  <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal">
-                    {c.kind}
-                  </p>
-                  {c.status === "placeholder" && (
-                    <span className="text-[10px] text-warm-black/40">
-                      coming soon
-                    </span>
-                  )}
-                  {c.live_url && (
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-butter-yellow bg-warm-black px-2 py-1 rounded-sm">
-                      ● Live
-                    </span>
-                  )}
-                </div>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-4">
+                  {c.kind}
+                </p>
                 <h2 className="text-2xl font-semibold mb-3">{c.title}</h2>
                 <p className="text-sm leading-relaxed text-warm-black/75 mb-6">
                   {c.hook_short}
                 </p>
-                <div className="flex items-baseline justify-between gap-4">
-                  <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition">
-                    Read case study →
-                  </p>
-                  {c.live_url && (
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-warm-black/70">
-                      {c.live_url_label}
-                    </span>
-                  )}
-                </div>
+                <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition">
+                  Read case study →
+                </p>
                 </div>
               </Link>
             ))}
