@@ -110,9 +110,13 @@ export default async function CaseStudyPage({
                 <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-4">
                   {c.kind}
                 </p>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif italic leading-[1.05]">
-                  {c.title}
-                </h1>
+                {c.hero_has_title ? (
+                  <h1 className="sr-only">{c.title}</h1>
+                ) : (
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif italic leading-[1.05]">
+                    {c.title}
+                  </h1>
+                )}
               </div>
               <div className="md:col-span-5">
                 <p className="text-lg md:text-xl text-warm-black/80 leading-relaxed">

@@ -42,6 +42,9 @@ export type CaseStudy = {
   /** When true, the home-page tile renders photo + title only (no eyebrow,
    *  body, or read-case-study link). Used for Cinnamon Shore per mockup. */
   card_minimal?: boolean;
+  /** When true, the case study detail page skips the H1 title in the header
+   *  because the hero banner already contains the title typography. */
+  hero_has_title?: boolean;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -84,9 +87,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     live_url_label: "theportalocal.com",
     hero: {
       src: "/work/port-a-local/hero.jpg",
-      alt: "Port Aransas coastal aerial at sunset — marshes and Gulf Coast",
+      alt: "Port A Local — aerial drone shot of the Port Aransas pier and Gulf surf with coral lighthouse mark and tagline 'Discover Port Aransas Like a Local'",
       shape: "wide",
     },
+    hero_has_title: true,
   },
   {
     slug: "palm-social-club",
