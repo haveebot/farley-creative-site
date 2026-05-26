@@ -211,7 +211,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/palmfest/hero.jpg",
-      alt: "PALMFEST main stage with giant letter installation, festival crowd, palm trees, and the Gulf in the background",
+      alt: "PALMFEST aerial — main stage with PALMFEST banner, packed crowd around the giant PALMFEST letter installation, white festival tents, palm trees, and the Gulf in the background",
       shape: "wide",
     },
   },
