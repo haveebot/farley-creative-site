@@ -23,7 +23,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <HeaderNav dark={false} />
+      <HeaderNav />
       <main className="bg-cream text-warm-black">
         {/* HERO — diagonal stripe banner + wordmark */}
         <section className="bg-cream">
@@ -97,14 +97,15 @@ export default function AboutPage() {
         <section className="bg-cream px-6 py-16 md:py-20">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
             <div className="md:col-span-5">
-              <Image
-                src="/about/meet-collie-portrait.jpg"
-                alt="Collie Farley — founder of Farley Creative"
-                width={900}
-                height={900}
-                sizes="(min-width: 768px) 40vw, 100vw"
-                className="rounded-full w-full h-auto block"
-              />
+              <div className="relative aspect-square w-full max-w-sm md:max-w-md mx-auto rounded-full overflow-hidden bg-warm-black/5">
+                <Image
+                  src="/about/meet-collie-portrait.jpg"
+                  alt="Collie Farley — founder of Farley Creative"
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
             <div className="md:col-span-7">
               <p className="text-xs uppercase tracking-[0.3em] text-warm-black mb-6">
