@@ -97,12 +97,12 @@ export default function AboutPage() {
         <section className="bg-cream px-6 py-16 md:py-20">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
             <div className="md:col-span-5 flex justify-center">
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-warm-black/5 shrink-0">
+              <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden bg-warm-black/5 shrink-0">
                 <Image
                   src="/about/meet-collie-portrait.jpg"
                   alt="Collie Farley — founder of Farley Creative"
                   fill
-                  sizes="320px"
+                  sizes="384px"
                   className="object-cover"
                 />
               </div>
