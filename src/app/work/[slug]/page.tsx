@@ -44,7 +44,7 @@ export async function generateMetadata({
 function aspectClass(shape?: "wide" | "tall" | "square") {
   if (shape === "tall") return "aspect-[4/5]";
   if (shape === "square") return "aspect-square";
-  return "aspect-[21/9]";
+  return "aspect-[16/9]";
 }
 
 function ImageBlock({
@@ -207,30 +207,30 @@ export default async function CaseStudyPage({
         {/* IMAGE BREAK 2 — handles 1, 2, or 3+ remaining images */}
         {gRest.length > 0 && <GalleryBreak images={gRest} />}
 
-        {/* OUTCOME — stat callouts on butter-yellow */}
-        <section className="bg-butter-yellow text-warm-black px-6 py-20 md:py-28 mt-20 md:mt-28">
+        {/* OUTCOME — stat callouts, stays on cream with butter-yellow accents */}
+        <section className="px-6 py-20 md:py-28 mt-12">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-baseline gap-6 mb-12">
-              <span className="text-warm-black/60 text-xs font-medium tracking-widest">
+              <span className="text-forest-teal text-xs font-medium tracking-widest">
                 04
               </span>
               <h2 className="text-2xl md:text-3xl font-serif italic">
                 Outcome
               </h2>
             </div>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
               {c.outcome.map((o, i) => {
                 const m = o.match(/^([\d.]+%)\s+(.+)/);
                 if (m) {
                   return (
                     <li
                       key={i}
-                      className="border-l-2 border-warm-black/30 pl-5"
+                      className="border-l-2 border-butter-yellow pl-6"
                     >
-                      <p className="text-5xl md:text-6xl font-serif italic text-warm-black leading-none mb-3">
+                      <p className="text-5xl md:text-6xl font-serif italic text-forest-teal leading-none mb-3">
                         {m[1]}
                       </p>
-                      <p className="text-sm md:text-base text-warm-black/80 leading-snug">
+                      <p className="text-sm md:text-base text-warm-black/75 leading-snug">
                         {m[2]}
                       </p>
                     </li>
@@ -239,7 +239,7 @@ export default async function CaseStudyPage({
                 return (
                   <li
                     key={i}
-                    className="border-l-2 border-warm-black/30 pl-5 text-base md:text-lg leading-relaxed text-warm-black/85"
+                    className="border-l-2 border-butter-yellow pl-6 text-base md:text-lg leading-relaxed text-warm-black/85"
                   >
                     {o}
                   </li>

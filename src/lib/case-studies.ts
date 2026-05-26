@@ -183,16 +183,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     gallery: [
       {
         src: "/work/palm-republic/gallery-1.jpg",
-        alt: "The Palm Republic retail collage — caps, apparel, store interiors, and the brand color palette",
-        shape: "wide",
-      },
-      {
-        src: "/work/palm-republic/gallery-2.jpg",
         alt: "The Palm Republic flag flying over Port Aransas harbor with cargo ship in background",
         shape: "square",
       },
       {
-        src: "/work/palm-republic/gallery-3.jpg",
+        src: "/work/palm-republic/gallery-2.jpg",
         alt: "Port Aransas palm flag patch on the back of a Palm Republic shirt",
         shape: "square",
       },
@@ -241,12 +236,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     gallery: [
       {
         src: "/work/palmfest/gallery-1.jpg",
-        alt: "PALMFEST giant letter installation with festival crowd at sunset",
-        shape: "wide",
-      },
-      {
-        src: "/work/palmfest/gallery-2.jpg",
-        alt: "PALMFEST scenes — main stage with crowd, music performances, sunset over the festival grounds",
+        alt: "PALMFEST giant letter installation in vibrant colors, festival audience on the lawn",
         shape: "wide",
       },
     ],
@@ -334,22 +324,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     gallery: [
       {
         src: "/work/cinnamon-shore/gallery-1.jpg",
-        alt: "Cinnamon Shore beach houses panorama — pastel exteriors lined along the dunes",
+        alt: "Cinnamon Shore aerial — pastel beach houses behind dunes with surf in the foreground",
         shape: "wide",
       },
       {
         src: "/work/cinnamon-shore/gallery-2.jpg",
-        alt: "Cinnamon Shore aerial — beach houses along the coast with palm trees and surf",
-        shape: "wide",
-      },
-      {
-        src: "/work/cinnamon-shore/gallery-3.jpg",
-        alt: "Cinnamon Shore brand book and color palette — coral, navy, sage, cream",
-        shape: "wide",
-      },
-      {
-        src: "/work/cinnamon-shore/gallery-4.jpg",
-        alt: "Cinnamon Shore marketing campaign creative — vacation rental cards in the resort brand",
+        alt: "Cinnamon Shore marketing campaign creative — three vacation-rental cards in the resort's coral + seaglass brand",
         shape: "wide",
       },
     ],
