@@ -76,9 +76,8 @@ export default function HomePage() {
               <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-4">
                 Selected work
               </p>
-              <h2 className="text-3xl md:text-4xl font-serif italic leading-tight max-w-2xl">
-                Brand systems that live in physical spaces, on screens, and at
-                events.
+              <h2 className="text-2xl md:text-3xl font-serif italic leading-tight max-w-2xl">
+                Building Living Brand Systems that connect and convert.
               </h2>
             </div>
           </Reveal>
@@ -109,38 +108,18 @@ export default function HomePage() {
                 ) : (
                   <div className="aspect-[16/9] bg-warm-black/5"></div>
                 )}
-                {c.card_minimal ? (
-                  <div className="pt-6 pb-2">
-                    <h3 className="text-xl md:text-2xl font-semibold">{c.title}</h3>
-                  </div>
-                ) : (
-                  <div className="pt-6 flex flex-col flex-1">
-                    <div className="flex items-baseline justify-between mb-3 gap-2">
-                      <p className="text-[10px] uppercase tracking-[0.25em] text-warm-black/70">
-                        {c.kind}
-                      </p>
-                      {c.live_url && (
-                        <span className="text-[9px] uppercase tracking-[0.2em] text-butter-yellow bg-warm-black px-2 py-1 rounded-sm shrink-0">
-                          ● Live
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-semibold mb-3">{c.title}</h3>
-                    <p className="text-sm md:text-base leading-relaxed text-warm-black/80 mb-5 flex-1">
-                      {c.hook_short}
-                    </p>
-                    <div className="flex items-baseline justify-between gap-3 mt-auto">
-                      <p className="text-xs italic text-warm-black/60 group-hover:text-forest-teal transition">
-                        Read case study →
-                      </p>
-                      {c.live_url && (
-                        <span className="text-[10px] uppercase tracking-[0.2em] text-warm-black/60">
-                          {c.live_url_label}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                )}
+                <div className="pt-6 flex flex-col flex-1">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-warm-black/70 mb-3">
+                    {c.kind}
+                  </p>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-3">{c.title}</h3>
+                  <p className="text-sm md:text-base leading-relaxed text-warm-black/80 mb-5 flex-1">
+                    {c.hook_short}
+                  </p>
+                  <p className="text-xs italic text-warm-black/60 group-hover:text-forest-teal transition mt-auto">
+                    Read case study →
+                  </p>
+                </div>
               </Link>
               </Reveal>
             ))}

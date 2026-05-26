@@ -321,7 +321,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     cta:
       "Standing up the marketing function for a hospitality, real estate, or growth-stage brand — and you want someone to own the brand-and-system integration, not just one channel? Let's talk.",
     status: "live",
-    card_minimal: true,
     hero: {
       src: "/work/cinnamon-shore/hero.jpg",
       alt: "Cinnamon Shore aerial — pastel beach houses lining the dunes, with surf in the foreground",
