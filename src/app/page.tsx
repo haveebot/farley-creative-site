@@ -31,7 +31,7 @@ export default function HomePage() {
             </span>
           </p>
           <p className="mt-10 text-sm md:text-base tracking-[0.25em] uppercase text-cream/80 animate-fade-in-delayed">
-            Bridges the gap between creative and conversion
+            Bridging the gap between creative and conversion
           </p>
         </div>
       </section>
@@ -52,15 +52,6 @@ export default function HomePage() {
             experience spanning hospitality, retail, real estate, non-profit,
             and lifestyle brands.
           </p>
-          <p className="text-base md:text-lg leading-relaxed mb-6">
-            After a decade of owning businesses, working with businesses in
-            freelance and hybrid capacities, and hiring agencies ourselves —
-            we&apos;ve experienced how marketing is approached from every angle.
-            We don&apos;t look at marketing through a vacuum of clicks and
-            vanity metrics, but through the lens of overall business health,
-            lifetime value, and operational capacity while prioritizing revenue
-            and ROI.
-          </p>
           <p className="text-base md:text-lg leading-relaxed mb-8">
             We blend the high-touch, fast-paced adaptability of a seasoned
             freelancer with the founder-first perspective and comprehensive
@@ -72,15 +63,12 @@ export default function HomePage() {
             href="/about"
             className="inline-block text-xs uppercase tracking-[0.25em] text-forest-teal border border-forest-teal px-6 py-3 hover:bg-forest-teal hover:text-cream transition"
           >
-            Read more →
+            About →
           </Link>
         </Reveal>
       </section>
 
-      {/* Stripe break */}
-      <div className="h-3 stripe-motif"></div>
-
-      {/* SELECTED WORK — 5 case studies per Collie's notes */}
+      {/* SELECTED WORK — 6 case studies per Collie's mockup (PAL, PSC, Palm Republic, PALMFEST, Sage Em, Cinnamon Shore) */}
       <section id="work" className="bg-cream text-warm-black px-6 py-24">
         <div className="max-w-6xl mx-auto">
           <Reveal className="flex items-end justify-between flex-wrap gap-6 mb-12">

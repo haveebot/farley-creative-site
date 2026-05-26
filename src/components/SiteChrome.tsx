@@ -13,6 +13,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+function Wordmark({ dark }: { dark: boolean }) {
+  return (
+    <span className="font-serif italic text-xl md:text-2xl leading-none tracking-tight whitespace-nowrap">
+      <span className={dark ? "text-butter-yellow" : "text-forest-teal"}>
+        farley
+      </span>
+      <span
+        className={`font-sans not-italic font-bold ${
+          dark ? "text-cream" : "text-warm-black"
+        }`}
+      >
+        creative
+      </span>
+    </span>
+  );
+}
+
 const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
@@ -45,23 +62,8 @@ export function HeaderNav({ dark = true }: { dark?: boolean }) {
         className={`${bg} sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-warm-black/90`}
       >
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <Image
-              src={dark ? "/brand/farleycreative-yellow-round.png" : "/brand/farleycreative-straight.png"}
-              alt="Farley Creative"
-              width={dark ? 36 : 140}
-              height={dark ? 36 : 32}
-              priority
-              className={dark ? "rounded-full" : ""}
-            />
-            {dark && (
-              <span className="font-serif italic text-butter-yellow text-base hidden sm:inline">
-                farley
-                <span className="font-sans not-italic font-bold text-cream">
-                  creative
-                </span>
-              </span>
-            )}
+          <Link href="/" className="flex items-center group" aria-label="Farley Creative — Home">
+            <Wordmark dark={dark} />
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em]">
             {NAV_LINKS.map((l) => (
@@ -110,13 +112,7 @@ export function HeaderNav({ dark = true }: { dark?: boolean }) {
           />
           <div className="absolute inset-y-0 right-0 w-72 bg-warm-black text-cream/90 p-6 flex flex-col">
             <div className="flex items-center justify-between mb-12">
-              <Image
-                src="/brand/farleycreative-yellow-round.png"
-                alt="Farley Creative"
-                width={36}
-                height={36}
-                className="rounded-full"
-              />
+              <Wordmark dark={true} />
               <button
                 type="button"
                 aria-label="Close menu"
