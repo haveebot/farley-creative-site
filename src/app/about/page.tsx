@@ -38,8 +38,8 @@ export default function AboutPage() {
               className="w-full h-auto block"
             />
           </div>
-          <div className="px-6 py-10 md:py-14 text-center">
-            <p className="font-serif italic text-warm-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight">
+          <div className="px-6 py-12 md:py-16 text-center">
+            <p className="font-serif italic text-warm-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-tight">
               farley
               <span className="font-sans not-italic font-bold text-warm-black">
                 creative
