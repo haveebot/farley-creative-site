@@ -83,7 +83,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     live_url: "https://theportalocal.com",
     live_url_label: "theportalocal.com",
     hero: {
-      src: "/work/port-a-local/hero.png",
+      src: "/work/port-a-local/hero.jpg",
       alt: "Port Aransas coastal aerial at sunset — marshes and Gulf Coast",
       shape: "wide",
     },
@@ -125,7 +125,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/palm-social-club/hero.jpg",
-      alt: "The Palm Social Club neon sign with cocktail and lemon bowl on the bar",
+      alt: "The Palm Social Club — green wood-slat sign with gold lettering and three signature cocktails on the bar",
       shape: "wide",
     },
     gallery: [
@@ -177,7 +177,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/palm-republic/hero.jpg",
-      alt: "The Palm Republic flag — palm tree on navy with orange and seafoam stripes, flying over Port Aransas harbor",
+      alt: "The Palm Republic — heather-grey trucker cap with Port Aransas flag patch, sitting on coastal rocks",
       shape: "wide",
     },
     gallery: [
@@ -235,7 +235,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/palmfest/hero.jpg",
-      alt: "PALMFEST main stage with massive crowd, palm trees, and waterfront in the background",
+      alt: "PALMFEST main stage with giant letter installation, festival crowd, palm trees, and the Gulf in the background",
       shape: "wide",
     },
     gallery: [
@@ -324,7 +324,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     card_minimal: true,
     hero: {
       src: "/work/cinnamon-shore/hero.jpg",
-      alt: "Cinnamon Shore aerial — pastel sunset over the coastal community, beach houses lining the Gulf",
+      alt: "Cinnamon Shore aerial — pastel beach houses lining the dunes, with surf in the foreground",
       shape: "wide",
     },
   },

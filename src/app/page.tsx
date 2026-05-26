@@ -91,7 +91,7 @@ export default function HomePage() {
                 className="block group h-full flex flex-col"
               >
                 {c.hero ? (
-                  <div className="relative aspect-[5/4] bg-warm-black/5 overflow-hidden">
+                  <div className="relative aspect-[16/9] bg-warm-black/5 overflow-hidden">
                     <Image
                       src={c.hero.src}
                       alt={c.hero.alt}
@@ -101,13 +101,13 @@ export default function HomePage() {
                     />
                   </div>
                 ) : c.feature_quote ? (
-                  <div className="aspect-[5/4] bg-forest-teal text-butter-yellow flex items-center px-8 md:px-10">
+                  <div className="aspect-[16/9] bg-forest-teal text-butter-yellow flex items-center px-8 md:px-10">
                     <blockquote className="font-serif italic text-lg md:text-2xl leading-snug whitespace-pre-line">
                       {c.feature_quote}
                     </blockquote>
                   </div>
                 ) : (
-                  <div className="aspect-[5/4] bg-warm-black/5"></div>
+                  <div className="aspect-[16/9] bg-warm-black/5"></div>
                 )}
                 {c.card_minimal ? (
                   <div className="pt-6 pb-2">
