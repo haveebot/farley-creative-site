@@ -38,8 +38,8 @@ export default function AboutPage() {
               className="w-full h-auto block"
             />
           </div>
-          <div className="px-6 py-10 md:py-14 text-center">
-            <p className="font-serif italic text-warm-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight">
+          <div className="px-6 py-6 md:py-8 text-center">
+            <p className="font-serif italic text-warm-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight">
               farley
               <span className="font-sans not-italic font-bold text-warm-black">
                 creative
@@ -57,8 +57,8 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="bg-cream px-6 py-16 md:py-20">
-            <div className="max-w-4xl mx-auto space-y-6">
+          <div className="bg-cream px-6 py-10 md:py-14">
+            <div className="max-w-3xl mx-auto space-y-5">
               <p className="font-serif italic text-xl md:text-2xl leading-snug">
                 Founder-operator marketing and branding agency. Texas-rooted,
                 brand-meets-physical-space sweet spot.
@@ -94,8 +94,8 @@ export default function AboutPage() {
         </section>
 
         {/* MEET COLLIE — portrait on left, butter-yellow text box on right */}
-        <section className="bg-cream px-6 py-16 md:py-20">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
+        <section className="bg-cream px-6 py-10 md:py-14">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
             <div className="md:col-span-5 flex justify-center">
               <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden bg-warm-black/5 shrink-0">
                 <Image
@@ -130,7 +130,7 @@ export default function AboutPage() {
         </section>
 
         {/* PULL QUOTE */}
-        <section className="bg-warm-black text-cream px-6 py-16 md:py-20">
+        <section className="bg-warm-black text-cream px-6 py-12 md:py-16">
           <div className="max-w-4xl mx-auto text-center">
             <blockquote className="font-serif italic text-xl md:text-2xl lg:text-3xl leading-snug">
               We understand that great marketing isn&apos;t selling — it&apos;s
@@ -156,7 +156,7 @@ export default function AboutPage() {
         </section>
 
         {/* THE TRACK RECORD */}
-        <section className="bg-cream px-6 py-16 md:py-20 border-b border-warm-black/10">
+        <section className="bg-cream px-6 py-12 md:py-16 border-b border-warm-black/10">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-5">
               The Track Record
