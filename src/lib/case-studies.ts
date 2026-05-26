@@ -106,7 +106,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "The Palm Social Club",
     kind: "Brand + Hospitality Design",
     client: "Palm Family Ventures · Port Aransas, TX",
-    year: "2022–present",
+    year: "2022–2026",
     scope: [
       "Brand concept",
       "Hospitality design",
@@ -153,7 +153,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "The Palm Republic",
     kind: "Lifestyle Brand + Retail",
     client: "Palm Family Ventures · Port Aransas, TX",
-    year: "2017–present",
+    year: "2017–2026",
     scope: [
       "Brand identity system",
       "Product strategy",
