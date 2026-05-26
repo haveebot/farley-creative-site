@@ -135,28 +135,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHO WE'VE WORKED WITH — logo strip placeholder */}
-      <section className="bg-soft-mint text-warm-black px-6 py-16">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-8 text-center">
-            Who we&apos;ve worked with
-          </p>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 items-center justify-items-center">
-            {CLIENT_LOGOS.map((name) => (
-              <div
-                key={name}
-                className="text-xs md:text-sm font-medium text-warm-black/60 tracking-wider uppercase text-center"
-                title={name}
-              >
-                {name}
-              </div>
-            ))}
-          </div>
-          <p className="text-[11px] text-warm-black/40 text-center mt-8 italic">
-            (Logos to follow — placeholder names while client marks are sourced.)
-          </p>
-        </div>
-      </section>
 
       {/* PACKAGES — 5 productized offerings per Collie's notes */}
       <section id="packages" className="bg-cream text-warm-black px-6 py-24">
@@ -261,21 +239,3 @@ export default function HomePage() {
   );
 }
 
-/**
- * Per Collie's IMG_3037 logo strip — using working names while client marks
- * are sourced from her assets.
- */
-const CLIENT_LOGOS = [
-  "PSL",
-  "PSC",
-  "Sage",
-  "Cinnamon Shore",
-  "Crystal",
-  "White Pony",
-  "Watermark",
-  "Pattern",
-  "Daniel's",
-  "Brownsville",
-  "PALMFEST",
-  "Port A Local",
-];
