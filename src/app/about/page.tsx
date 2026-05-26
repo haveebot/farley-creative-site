@@ -25,27 +25,17 @@ export default function AboutPage() {
     <>
       <HeaderNav />
       <main className="bg-cream text-warm-black">
-        {/* HERO — diagonal stripe banner + wordmark */}
+        {/* HERO — single banner with diagonal stripes + integrated wordmark */}
         <section className="bg-cream">
-          <div className="relative w-full overflow-hidden">
-            <Image
-              src="/about/hero-stripe-banner.jpg"
-              alt="Farley Creative diagonal stripe motif"
-              width={1800}
-              height={209}
-              priority
-              sizes="100vw"
-              className="w-full h-auto block"
-            />
-          </div>
-          <div className="px-6 py-12 md:py-16 text-center">
-            <p className="font-serif italic text-warm-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-tight">
-              farley
-              <span className="font-sans not-italic font-bold text-warm-black">
-                creative
-              </span>
-            </p>
-          </div>
+          <Image
+            src="/about/hero-stripe-banner.jpg"
+            alt="Farley Creative — diagonal stripe banner with farleycreative wordmark"
+            width={2200}
+            height={721}
+            priority
+            sizes="100vw"
+            className="w-full h-auto block"
+          />
         </section>
 
         {/* ABOUT US */}
