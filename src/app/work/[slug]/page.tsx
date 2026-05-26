@@ -68,22 +68,25 @@ export default async function CaseStudyPage({
   if (!c) notFound();
 
   const [g0, ...gRest] = c.gallery ?? [];
+  // Prefer the designed header banner if present; fall back to the tile/hero
+  // photo. Sage Em falls through to feature_quote.
+  const headerImage = c.header_banner ?? c.hero;
 
   return (
     <>
       <HeaderNav />
       <main className="bg-cream text-warm-black">
         {/* HERO — full-bleed banner or feature-quote fallback */}
-        {c.hero ? (
+        {headerImage ? (
           <div className="relative w-full bg-warm-black aspect-[16/8] md:aspect-[21/9] overflow-hidden">
             <Image
-              src={c.hero.src}
-              alt={c.hero.alt}
+              src={headerImage.src}
+              alt={headerImage.alt}
               fill
               priority
               sizes="100vw"
               className={
-                c.hero.shape === "tall" ? "object-contain" : "object-cover"
+                headerImage.shape === "tall" ? "object-contain" : "object-cover"
               }
             />
           </div>
@@ -110,7 +113,7 @@ export default async function CaseStudyPage({
                 <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-4">
                   {c.kind}
                 </p>
-                {c.hero_has_title ? (
+                {c.header_has_title ? (
                   <h1 className="sr-only">{c.title}</h1>
                 ) : (
                   <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif italic leading-[1.05]">

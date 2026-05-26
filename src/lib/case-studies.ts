@@ -34,7 +34,11 @@ export type CaseStudy = {
   status: "live" | "placeholder";
   live_url?: string; // public-facing URL if the brand is live
   live_url_label?: string; // display label, defaults to the URL hostname
-  hero?: GalleryImage; // top-of-page hero image
+  hero?: GalleryImage; // tile / card preview image (used on home + /work index)
+  /** Designed banner shown at the TOP of the case study page only. Falls back
+   *  to `hero` if not set. Distinct from `hero` so tiles + page banner can be
+   *  different sources. */
+  header_banner?: GalleryImage;
   gallery?: GalleryImage[]; // additional images sprinkled through the case study
   /** Alternative to hero image — renders the card's photo-area as a Forest Teal
    *  panel with this quote text. Used for Sage Em per home page mockup. */
@@ -42,9 +46,9 @@ export type CaseStudy = {
   /** When true, the home-page tile renders photo + title only (no eyebrow,
    *  body, or read-case-study link). Used for Cinnamon Shore per mockup. */
   card_minimal?: boolean;
-  /** When true, the case study detail page skips the H1 title in the header
-   *  because the hero banner already contains the title typography. */
-  hero_has_title?: boolean;
+  /** When true, the case study detail page skips the H1 title because the
+   *  header banner already contains the title typography. */
+  header_has_title?: boolean;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -87,10 +91,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     live_url_label: "theportalocal.com",
     hero: {
       src: "/work/port-a-local/hero.jpg",
+      alt: "Port A Local — aerial coastal sunset",
+      shape: "wide",
+    },
+    header_banner: {
+      src: "/work/port-a-local/header-banner.jpg",
       alt: "Port A Local — aerial drone shot of the Port Aransas pier and Gulf surf with coral lighthouse mark and tagline 'Discover Port Aransas Like a Local'",
       shape: "wide",
     },
-    hero_has_title: true,
+    header_has_title: true,
   },
   {
     slug: "palm-social-club",
@@ -129,10 +138,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/palm-social-club/hero.jpg",
+      alt: "The Palm Social Club — green wood-slat sign with gold lettering and three signature cocktails on the bar",
+      shape: "wide",
+    },
+    header_banner: {
+      src: "/work/palm-social-club/header-banner.jpg",
       alt: "The Palm Social Club — tropical-wallpaper lounge interior with velvet sofa, throw pillows, mimosas on the table, and the PSC wordmark overlaid",
       shape: "wide",
     },
-    hero_has_title: true,
+    header_has_title: true,
   },
   {
     slug: "palm-republic",
@@ -170,6 +184,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/palm-republic/hero.jpg",
+      alt: "The Palm Republic — heather-grey trucker cap with Port Aransas flag patch sitting on coastal rocks",
+      shape: "wide",
+    },
+    header_banner: {
+      src: "/work/palm-republic/header-banner.jpg",
       alt: "The Palm Republic flag — palm tree on navy, seafoam, and orange flying over Port Aransas harbor with a cargo ship in the background",
       shape: "wide",
     },
@@ -211,7 +230,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/palmfest/hero.jpg",
-      alt: "PALMFEST aerial — main stage with PALMFEST banner, packed crowd around the giant PALMFEST letter installation, white festival tents, palm trees, and the Gulf in the background",
+      alt: "PALMFEST main stage with giant letter installation, festival crowd, palm trees, and the Gulf in the background",
+      shape: "wide",
+    },
+    header_banner: {
+      src: "/work/palmfest/header-banner.jpg",
+      alt: "PALMFEST aerial — main stage with PALMFEST banner, crowd around the giant PALMFEST letter installation, white tents, palm trees, and the Gulf",
       shape: "wide",
     },
   },
@@ -292,6 +316,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/cinnamon-shore/hero.jpg",
+      alt: "Cinnamon Shore aerial — pastel beach houses lining the dunes with surf in the foreground",
+      shape: "wide",
+    },
+    header_banner: {
+      src: "/work/cinnamon-shore/header-banner.jpg",
       alt: "Cinnamon Shore — pastel sunset over the coastal community, beach houses lining the dunes with surf in the foreground",
       shape: "wide",
     },
