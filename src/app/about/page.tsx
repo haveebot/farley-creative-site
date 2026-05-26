@@ -38,8 +38,8 @@ export default function AboutPage() {
               className="w-full h-auto block"
             />
           </div>
-          <div className="px-6 py-6 md:py-8 text-center">
-            <p className="font-serif italic text-warm-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight">
+          <div className="px-6 py-10 md:py-14 text-center">
+            <p className="font-serif italic text-warm-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight">
               farley
               <span className="font-sans not-italic font-bold text-warm-black">
                 creative
@@ -57,8 +57,8 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="bg-cream px-6 py-10 md:py-14">
-            <div className="max-w-3xl mx-auto space-y-5">
+          <div className="bg-soft-mint px-6 py-12 md:py-16">
+            <div className="max-w-4xl mx-auto space-y-5">
               <p className="font-serif italic text-xl md:text-2xl leading-snug">
                 Founder-operator marketing and branding agency. Texas-rooted,
                 brand-meets-physical-space sweet spot.
