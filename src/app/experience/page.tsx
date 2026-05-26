@@ -1,10 +1,9 @@
 /**
  * /experience — Selected experience page.
  *
- * Renders pre-agency credentials + recent client work that doesn't yet
- * have a full case study writeup. Distinct from /work (formal agency
- * case studies) so the breadth of Collie's track record is visible
- * without diluting the case study product.
+ * Renders Collie's senior credentials. Featured entries get a large image
+ * above the body text. Non-featured entries (Selected Brand Engagements) get
+ * a side-by-side text + 3-image gallery row layout per mockup DAHKut-EFqI.
  */
 
 import Image from "next/image";
@@ -44,9 +43,7 @@ export default function ExperiencePage() {
           <section
             key={category.slug}
             id={category.slug}
-            className={`px-6 py-16 ${
-              ci === 0 ? "border-t border-warm-black/10" : "border-t border-warm-black/10"
-            }`}
+            className="px-6 py-16 border-t border-warm-black/10"
           >
             <div className="max-w-5xl mx-auto">
               <div className="mb-10 max-w-2xl">
@@ -61,59 +58,109 @@ export default function ExperiencePage() {
                 </p>
               </div>
 
-              <div className="space-y-8">
-                {category.entries.map((entry) => (
-                  <article
-                    key={entry.slug}
-                    className={`${
-                      entry.featured
-                        ? "border border-warm-black/15 bg-cream overflow-hidden"
-                        : "p-6 border-l-2 border-forest-teal pl-6"
-                    }`}
-                  >
-                    {entry.featured && entry.image && (
-                      <div className="relative aspect-[16/9] bg-warm-black/5 overflow-hidden">
-                        <Image
-                          src={entry.image.src}
-                          alt={entry.image.alt}
-                          fill
-                          sizes="(min-width: 1024px) 60vw, 100vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
-                    <div className={entry.featured ? "p-8" : ""}>
-                    <header className="mb-3">
-                      <h3 className={`${entry.featured ? "text-2xl" : "text-xl"} font-semibold mb-1`}>
+              <div className="space-y-12">
+                {category.entries.map((entry) => {
+                  if (entry.featured) {
+                    return (
+                      <article
+                        key={entry.slug}
+                        className="border border-warm-black/15 overflow-hidden"
+                      >
+                        {entry.image && (
+                          <div className="relative w-full bg-warm-black/5 overflow-hidden">
+                            <Image
+                              src={entry.image.src}
+                              alt={entry.image.alt}
+                              width={2000}
+                              height={1200}
+                              sizes="(min-width: 1024px) 60vw, 100vw"
+                              className="w-full h-auto block"
+                              priority
+                            />
+                          </div>
+                        )}
+                        <div className="p-8 md:p-10">
+                          <header className="mb-3">
+                            <h3 className="text-2xl font-semibold mb-1">
+                              {entry.name}
+                            </h3>
+                            <p className="text-xs uppercase tracking-[0.2em] text-forest-teal">
+                              {entry.role}
+                            </p>
+                          </header>
+                          <p className="text-base text-warm-black/85 leading-relaxed mb-3">
+                            {entry.summary}
+                          </p>
+                          {entry.detail && (
+                            <p className="text-sm text-warm-black/75 leading-relaxed mb-4">
+                              {entry.detail}
+                            </p>
+                          )}
+                          {entry.highlights && entry.highlights.length > 0 && (
+                            <ul className="space-y-2 mt-4">
+                              {entry.highlights.map((h, i) => (
+                                <li
+                                  key={i}
+                                  className="border-l-2 border-butter-yellow pl-3 text-sm text-warm-black/85 leading-relaxed"
+                                >
+                                  {h}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      </article>
+                    );
+                  }
+                  // Non-featured: 2-column with text on left, image gallery on right
+                  if (entry.image) {
+                    return (
+                      <article
+                        key={entry.slug}
+                        className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center border-l-2 border-forest-teal pl-6 md:pl-8 py-2"
+                      >
+                        <div className="md:col-span-6">
+                          <h3 className="text-xl font-semibold mb-1">
+                            {entry.name}
+                          </h3>
+                          <p className="text-xs uppercase tracking-[0.2em] text-forest-teal mb-3">
+                            {entry.role}
+                          </p>
+                          <p className="text-base text-warm-black/85 leading-relaxed">
+                            {entry.summary}
+                          </p>
+                        </div>
+                        <div className="md:col-span-6">
+                          <Image
+                            src={entry.image.src}
+                            alt={entry.image.alt}
+                            width={1500}
+                            height={300}
+                            sizes="(min-width: 768px) 45vw, 100vw"
+                            className="w-full h-auto block"
+                          />
+                        </div>
+                      </article>
+                    );
+                  }
+                  // Non-featured, no image: text-only
+                  return (
+                    <article
+                      key={entry.slug}
+                      className="border-l-2 border-forest-teal pl-6 md:pl-8 py-2"
+                    >
+                      <h3 className="text-xl font-semibold mb-1">
                         {entry.name}
                       </h3>
-                      <p className="text-xs uppercase tracking-[0.2em] text-forest-teal">
+                      <p className="text-xs uppercase tracking-[0.2em] text-forest-teal mb-3">
                         {entry.role}
                       </p>
-                    </header>
-                    <p className="text-base text-warm-black/85 leading-relaxed mb-3">
-                      {entry.summary}
-                    </p>
-                    {entry.detail && (
-                      <p className="text-sm text-warm-black/75 leading-relaxed mb-4">
-                        {entry.detail}
+                      <p className="text-base text-warm-black/85 leading-relaxed">
+                        {entry.summary}
                       </p>
-                    )}
-                    {entry.highlights && entry.highlights.length > 0 && (
-                      <ul className="space-y-2 mt-4">
-                        {entry.highlights.map((h, i) => (
-                          <li
-                            key={i}
-                            className="border-l-2 border-butter-yellow pl-3 text-sm text-warm-black/85 leading-relaxed"
-                          >
-                            {h}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    </div>
-                  </article>
-                ))}
+                    </article>
+                  );
+                })}
               </div>
             </div>
           </section>

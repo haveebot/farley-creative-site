@@ -41,31 +41,18 @@ export async function generateMetadata({
   };
 }
 
-function aspectClass(shape?: "wide" | "tall" | "square") {
-  if (shape === "tall") return "aspect-[4/5]";
-  if (shape === "square") return "aspect-square";
-  return "aspect-[16/9]";
-}
-
-function ImageBlock({
-  image,
-  sizes = "100vw",
-  bleed = true,
-}: {
-  image: GalleryImage;
-  sizes?: string;
-  bleed?: boolean;
-}) {
+function ImageBlock({ image }: { image: GalleryImage }) {
+  // Display at natural aspect ratio — no forced crop. Plain img keeps the
+  // image's intrinsic proportions so wide panoramic crops stay panoramic and
+  // square crops stay square instead of getting cropped to fit a container.
   return (
-    <div
-      className={`relative w-full bg-warm-black/5 overflow-hidden ${aspectClass(image.shape)} ${bleed ? "" : "rounded-none"}`}
-    >
-      <Image
+    <div className="w-full bg-warm-black/5">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={image.src}
         alt={image.alt}
-        fill
-        sizes={sizes}
-        className={image.shape === "tall" ? "object-contain" : "object-cover"}
+        className="block w-full h-auto"
+        loading="lazy"
       />
     </div>
   );
@@ -322,72 +309,14 @@ function Section({
 }
 
 function GalleryBreak({ images }: { images: GalleryImage[] }) {
-  if (images.length === 1) {
-    return (
-      <div className="mt-20 md:mt-28">
-        <ImageBlock image={images[0]} />
-      </div>
-    );
-  }
-
-  // 2 images: side-by-side
-  if (images.length === 2) {
-    return (
-      <div className="mt-20 md:mt-28 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-          {images.map((g, i) => (
-            <div
-              key={i}
-              className={`relative bg-warm-black/5 overflow-hidden ${
-                g.shape === "tall"
-                  ? "aspect-[4/5]"
-                  : g.shape === "square"
-                    ? "aspect-square"
-                    : "aspect-[5/4]"
-              }`}
-            >
-              <Image
-                src={g.src}
-                alt={g.alt}
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  // 3+ images: first as full-bleed, rest as 2-up grid below
+  // Stack images at natural aspect — full width, no forced crops. Mixed
+  // source aspects (panoramic, square, tall) read cleanly when each gets
+  // its own row.
   return (
-    <div className="mt-20 md:mt-28">
-      <ImageBlock image={images[0]} />
-      <div className="px-6 mt-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-          {images.slice(1).map((g, i) => (
-            <div
-              key={i}
-              className={`relative bg-warm-black/5 overflow-hidden ${
-                g.shape === "tall"
-                  ? "aspect-[4/5]"
-                  : g.shape === "square"
-                    ? "aspect-square"
-                    : "aspect-[5/4]"
-              }`}
-            >
-              <Image
-                src={g.src}
-                alt={g.alt}
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="mt-20 md:mt-28 space-y-4">
+      {images.map((g, i) => (
+        <ImageBlock key={i} image={g} />
+      ))}
     </div>
   );
 }

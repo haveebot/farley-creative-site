@@ -1,16 +1,10 @@
 /**
- * Experience — Collie's pre- and parallel-to-Farley-Creative credentials,
- * mirrored from her current portfolio (farleycreative.com home page + the
- * /collie-farley-portfolio 28-slide deck).
- *
- * Separated from /work (Farley Creative formal case studies) because these
- * are either: pre-agency career credentials, or recent client engagements
- * that haven't been written up as full case studies yet.
+ * Experience — Collie's pre- and parallel-to-Farley-Creative credentials.
  *
  * Four categories in priority order:
  *   1. Recent client work (RK Coastal Customs / RK Projects)
  *   2. In-house leadership (Cinnamon Shore — Director of Marketing)
- *   3. Selected brand engagements (Gully's Landing, Downtown Grub, Texas Culture Co)
+ *   3. Selected brand engagements (Gully's Landing, RK Properties, Texas Culture Co)
  *   4. Product + packaging design (Wrangler, Jack Daniel's, Stetson)
  */
 
@@ -19,9 +13,9 @@ export type ExperienceEntry = {
   name: string;
   role: string;
   summary: string;
-  highlights?: string[]; // measurable outcomes / specific work
-  detail?: string; // longer paragraph if useful
-  featured?: boolean; // gets bigger treatment
+  highlights?: string[];
+  detail?: string;
+  featured?: boolean;
   image?: { src: string; alt: string };
 };
 
@@ -55,8 +49,8 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         ],
         featured: true,
         image: {
-          src: "/work/rk-projects/hero.png",
-          alt: "RK Projects Port Aransas mobile site — luxury custom home builders, kitchen interior",
+          src: "/experience/rk-projects/hero.jpg",
+          alt: "RK Projects Coastal Living Luxury Redefined — overhead pool, RK logo, refined navy typography",
         },
       },
     ],
@@ -83,8 +77,8 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         ],
         featured: true,
         image: {
-          src: "/experience/cinnamon-shore/hero.png",
-          alt: "Cinnamon Shore community aerial — white coastal homes on the Texas Gulf",
+          src: "/experience/cinnamon-shore/hero.jpg",
+          alt: "Cinnamon Shore — pastel sunset over the coastal community, beach houses behind dunes with surf in the foreground",
         },
       },
     ],
@@ -101,13 +95,21 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         role: "Brand identity · Website design",
         summary:
           "Hospitality brand identity and digital presence for a coastal Texas destination.",
+        image: {
+          src: "/experience/gullys-landing/gallery.jpg",
+          alt: "Gully's Landing brand pack, yellow-striped logo lockup, and mobile site",
+        },
       },
       {
-        slug: "downtown-grub",
-        name: "Downtown Grub",
-        role: "Brand identity · Campaign development",
+        slug: "rk-properties",
+        name: "RK Properties",
+        role: "Brand identity · Website + e-commerce",
         summary:
-          "Restaurant brand identity, signage, and ongoing campaign development.",
+          "Brand identity, full website, and e-commerce extension for a Port Aransas luxury custom home builder.",
+        image: {
+          src: "/experience/rk-properties/gallery.jpg",
+          alt: "RK Projects brand pack, website with luxury interior, and mobile site",
+        },
       },
       {
         slug: "texas-culture-company",
@@ -115,6 +117,10 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         role: "Brand identity · SEO · Performance marketing",
         summary:
           "Brand identity system paired with digital and performance marketing strategy.",
+        image: {
+          src: "/experience/texas-culture-company/gallery.jpg",
+          alt: "Texas Culture Company brand pack, website hero, and mobile app",
+        },
       },
     ],
   },
