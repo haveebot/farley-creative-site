@@ -94,7 +94,7 @@ export default function AboutPage() {
         </section>
 
         {/* MEET COLLIE — portrait on left, butter-yellow text box on right */}
-        <section className="bg-cream px-6 py-10 md:py-14">
+        <section className="bg-cream px-6 py-20 md:py-28">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
             <div className="md:col-span-5 flex justify-center">
               <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden bg-warm-black/5 shrink-0">
