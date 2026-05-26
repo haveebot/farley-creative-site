@@ -129,9 +129,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     status: "live",
     hero: {
       src: "/work/palm-social-club/hero.jpg",
-      alt: "The Palm Social Club — green wood-slat sign with gold lettering and three signature cocktails on the bar",
+      alt: "The Palm Social Club — tropical-wallpaper lounge interior with velvet sofa, throw pillows, mimosas on the table, and the PSC wordmark overlaid",
       shape: "wide",
     },
+    hero_has_title: true,
   },
   {
     slug: "palm-republic",
