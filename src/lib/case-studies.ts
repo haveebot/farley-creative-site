@@ -124,9 +124,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Building a hospitality brand where the venue, the brand, and the experience need to feel like one decision? Let's talk.",
     status: "live",
     hero: {
-      src: "/work/palm-social-club/hero.png",
-      alt: "The Palm Social Club brand pack — color palette, signage, venue, live music",
-      shape: "tall",
+      src: "/work/palm-social-club/hero.jpg",
+      alt: "The Palm Social Club neon sign with cocktail and lemon bowl on the bar",
+      shape: "wide",
     },
     gallery: [
       {
@@ -176,8 +176,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Building a lifestyle brand that needs to stand for something beyond what it sells? Let's talk.",
     status: "live",
     hero: {
-      src: "/work/palm-republic/hero.png",
-      alt: "The Palm Republic e-commerce site on a laptop — aerial beach with palm flag logo",
+      src: "/work/palm-republic/hero.jpg",
+      alt: "The Palm Republic flag — palm tree on navy with orange and seafoam stripes, flying over Port Aransas harbor",
       shape: "wide",
     },
     gallery: [
@@ -234,8 +234,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Building a brand for an event — and you want the brand to scale with the event year over year? Let's talk.",
     status: "live",
     hero: {
-      src: "/work/palmfest/hero.png",
-      alt: "PALMFEST main stage at sunset — crowd, palm trees, festival branding",
+      src: "/work/palmfest/hero.jpg",
+      alt: "PALMFEST main stage with massive crowd, palm trees, and waterfront in the background",
       shape: "wide",
     },
     gallery: [
@@ -322,6 +322,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Standing up the marketing function for a hospitality, real estate, or growth-stage brand — and you want someone to own the brand-and-system integration, not just one channel? Let's talk.",
     status: "live",
     card_minimal: true,
+    hero: {
+      src: "/work/cinnamon-shore/hero.jpg",
+      alt: "Cinnamon Shore aerial — pastel sunset over the coastal community, beach houses lining the Gulf",
+      shape: "wide",
+    },
   },
 ];
 
