@@ -136,6 +136,10 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         role: "Product Designer · Art Director",
         summary:
           "Licensed leather goods and accessories. Wallet packaging designed to resemble the iconic back pocket of Wrangler jeans.",
+        image: {
+          src: "/experience/wrangler/gallery.png",
+          alt: "Wrangler tri-fold wallet packaging and tooled-leather belt with floral buckle",
+        },
       },
       {
         slug: "jack-daniels",
@@ -143,6 +147,10 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         role: "Product Designer · Art Director",
         summary:
           "Licensed BBQ + lifestyle goods. BBQ tool set designed in reclaimed whiskey-barrel wood, produced through international manufacturing partners.",
+        image: {
+          src: "/experience/jack-daniels/gallery.png",
+          alt: "Jack Daniel's branded belt buckle tin, gold buckle, and tooled-leather belt",
+        },
       },
       {
         slug: "stetson",
@@ -150,6 +158,10 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         role: "Product Designer · Art Director",
         summary:
           "Licensed western accessories — rodeo buckle design, leather goods, branded retail collections. Heritage-brand DNA translated into market-ready product.",
+        image: {
+          src: "/experience/stetson/gallery.png",
+          alt: "Stetson tooled-leather tri-fold wallet and matching belt with silver buckle",
+        },
       },
     ],
   },

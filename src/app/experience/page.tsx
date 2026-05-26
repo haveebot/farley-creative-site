@@ -135,7 +135,7 @@ export default function ExperiencePage() {
                             src={entry.image.src}
                             alt={entry.image.alt}
                             width={1500}
-                            height={300}
+                            height={540}
                             sizes="(min-width: 768px) 45vw, 100vw"
                             className="w-full h-auto block"
                           />
