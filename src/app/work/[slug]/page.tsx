@@ -73,8 +73,8 @@ export default async function CaseStudyPage({
     <>
       <HeaderNav />
       <main className="bg-cream text-warm-black">
-        {/* HERO — full-bleed banner */}
-        {c.hero && (
+        {/* HERO — full-bleed banner or feature-quote fallback */}
+        {c.hero ? (
           <div className="relative w-full bg-warm-black aspect-[16/8] md:aspect-[21/9] overflow-hidden">
             <Image
               src={c.hero.src}
@@ -87,7 +87,13 @@ export default async function CaseStudyPage({
               }
             />
           </div>
-        )}
+        ) : c.feature_quote ? (
+          <div className="w-full bg-forest-teal text-butter-yellow flex items-center justify-center px-6 py-24 md:py-32">
+            <blockquote className="font-serif italic text-3xl md:text-5xl leading-snug whitespace-pre-line max-w-4xl text-center">
+              {c.feature_quote}
+            </blockquote>
+          </div>
+        ) : null}
 
         {/* HEADER — title, hook, meta */}
         <header className="px-6 pt-16 md:pt-24 pb-16">

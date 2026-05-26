@@ -44,7 +44,7 @@ export default function WorkPage() {
                 href={`/work/${c.slug}`}
                 className="block border border-warm-black/15 bg-cream hover:border-forest-teal transition group overflow-hidden"
               >
-                {c.hero && (
+                {c.hero ? (
                   <div className="relative aspect-[16/10] bg-warm-black/5 overflow-hidden">
                     <Image
                       src={c.hero.src}
@@ -54,7 +54,13 @@ export default function WorkPage() {
                       className={`${c.hero.shape === "tall" ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-500`}
                     />
                   </div>
-                )}
+                ) : c.feature_quote ? (
+                  <div className="aspect-[16/10] bg-forest-teal text-butter-yellow flex items-center px-8 md:px-10">
+                    <blockquote className="font-serif italic text-lg md:text-2xl leading-snug whitespace-pre-line">
+                      {c.feature_quote}
+                    </blockquote>
+                  </div>
+                ) : null}
                 <div className="p-8">
                 <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-4">
                   {c.kind}
