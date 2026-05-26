@@ -128,18 +128,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       alt: "The Palm Social Club — green wood-slat sign with gold lettering and three signature cocktails on the bar",
       shape: "wide",
     },
-    gallery: [
-      {
-        src: "/work/palm-social-club/gallery-1.jpg",
-        alt: "The Palm Social Club venue exterior — white building with coral entry door and palm signage",
-        shape: "tall",
-      },
-      {
-        src: "/work/palm-social-club/gallery-2.jpg",
-        alt: "Four scenes from The Palm Social Club — neon sign with cocktail, tropical wallpaper with drinks, packed night crowd, aerial of striped umbrellas",
-        shape: "wide",
-      },
-    ],
   },
   {
     slug: "palm-republic",
@@ -180,18 +168,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       alt: "The Palm Republic — heather-grey trucker cap with Port Aransas flag patch, sitting on coastal rocks",
       shape: "wide",
     },
-    gallery: [
-      {
-        src: "/work/palm-republic/gallery-1.jpg",
-        alt: "The Palm Republic flag flying over Port Aransas harbor with cargo ship in background",
-        shape: "square",
-      },
-      {
-        src: "/work/palm-republic/gallery-2.jpg",
-        alt: "Port Aransas palm flag patch on the back of a Palm Republic shirt",
-        shape: "square",
-      },
-    ],
   },
   {
     slug: "palmfest",
@@ -233,13 +209,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       alt: "PALMFEST main stage with giant letter installation, festival crowd, palm trees, and the Gulf in the background",
       shape: "wide",
     },
-    gallery: [
-      {
-        src: "/work/palmfest/gallery-1.jpg",
-        alt: "PALMFEST giant letter installation in vibrant colors, festival audience on the lawn",
-        shape: "wide",
-      },
-    ],
   },
   {
     slug: "sage-em",
@@ -321,18 +290,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       alt: "Cinnamon Shore aerial — pastel beach houses lining the dunes, with surf in the foreground",
       shape: "wide",
     },
-    gallery: [
-      {
-        src: "/work/cinnamon-shore/gallery-1.jpg",
-        alt: "Cinnamon Shore aerial — pastel beach houses behind dunes with surf in the foreground",
-        shape: "wide",
-      },
-      {
-        src: "/work/cinnamon-shore/gallery-2.jpg",
-        alt: "Cinnamon Shore marketing campaign creative — three vacation-rental cards in the resort's coral + seaglass brand",
-        shape: "wide",
-      },
-    ],
   },
 ];
 

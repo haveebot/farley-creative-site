@@ -95,10 +95,6 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         role: "Brand identity · Website design",
         summary:
           "Hospitality brand identity and digital presence for a coastal Texas destination.",
-        image: {
-          src: "/experience/gullys-landing/gallery.jpg",
-          alt: "Gully's Landing brand pack, yellow-striped logo lockup, and mobile site",
-        },
       },
       {
         slug: "rk-properties",
@@ -106,10 +102,6 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         role: "Brand identity · Website + e-commerce",
         summary:
           "Brand identity, full website, and e-commerce extension for a Port Aransas luxury custom home builder.",
-        image: {
-          src: "/experience/rk-properties/gallery.jpg",
-          alt: "RK Projects brand pack, website with luxury interior, and mobile site",
-        },
       },
       {
         slug: "texas-culture-company",
@@ -117,10 +109,6 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
         role: "Brand identity · SEO · Performance marketing",
         summary:
           "Brand identity system paired with digital and performance marketing strategy.",
-        image: {
-          src: "/experience/texas-culture-company/gallery.jpg",
-          alt: "Texas Culture Company brand pack, website hero, and mobile app",
-        },
       },
     ],
   },
