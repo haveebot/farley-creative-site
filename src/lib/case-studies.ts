@@ -198,7 +198,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "PALMFEST",
     kind: "Event Brand + Experiential Marketing",
     client: "Palm Family Ventures · Port Aransas, TX",
-    year: "2020–present",
+    year: "2020–2025",
     scope: [
       "Brand identity",
       "Creative direction",
