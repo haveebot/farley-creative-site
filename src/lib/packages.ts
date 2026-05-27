@@ -76,7 +76,7 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
       {
         slug: "brand-launch",
         name: "Brand Launch",
-        price: "$6,000",
+        price: "$7,500",
         cadence: "project",
         positioning: "For founders launching a new venture — brand from concept to live.",
         highlight: true,
