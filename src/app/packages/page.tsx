@@ -156,6 +156,12 @@ export default function PackagesPage() {
                   </article>
                 ))}
               </div>
+
+              {family.footnote && (
+                <p className="mt-8 text-sm italic text-warm-black/65 max-w-2xl leading-relaxed">
+                  {family.footnote}
+                </p>
+              )}
             </div>
           </section>
         ))}
