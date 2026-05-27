@@ -32,5 +32,15 @@ export const BRANDING_EXAMPLES: BrandingExample[] = [
     },
   },
   // Palm Republic — coming next
-  // PALMFEST — coming next
+  {
+    slug: "palmfest",
+    name: "PALMFEST",
+    location: "Port Aransas, Texas",
+    composition: {
+      src: "/branding/palmfest.jpg",
+      alt: "PALMFEST event brand translated across festival signage, crowd-scale activations, performer stages, multi-year poster series, merch, social presence, and beach-side programming",
+      width: 2400,
+      height: 2000,
+    },
+  },
 ];
