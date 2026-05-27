@@ -139,7 +139,7 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
         cadence: "monthly",
         positioning: "For brands building real engagement and audience habit.",
         deliverables: [
-          "8–12 posts per month",
+          "8–11 posts per month",
           "Content + branded templates",
           "Scheduling + publishing",
           "Basic customer engagement",
