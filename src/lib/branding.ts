@@ -5,6 +5,9 @@
  * Each entry uses ONE pre-laid composition image (designed by C in Canva,
  * exported as a single composition) — this preserves her design control
  * end-to-end. The page just renders name + location + image per brand.
+ *
+ * Order: chronological by founding year — Palm Republic (2017) → PALMFEST
+ * (2020) → Palm Social Club (2022). Reads as a decade arc.
  */
 
 export type BrandingExample = {
@@ -20,17 +23,6 @@ export type BrandingExample = {
 };
 
 export const BRANDING_EXAMPLES: BrandingExample[] = [
-  {
-    slug: "palm-social-club",
-    name: "The Palm Social Club",
-    location: "Port Aransas, Texas",
-    composition: {
-      src: "/branding/psc.jpg",
-      alt: "The Palm Social Club brand identity translated across moodboard, interior, exterior, signage, brand-mark variations, cocktails, social presence, and live programming",
-      width: 2400,
-      height: 2000,
-    },
-  },
   {
     slug: "palm-republic",
     name: "The Palm Republic",
@@ -49,6 +41,17 @@ export const BRANDING_EXAMPLES: BrandingExample[] = [
     composition: {
       src: "/branding/palmfest.jpg",
       alt: "PALMFEST event brand translated across festival signage, crowd-scale activations, performer stages, multi-year poster series, merch, social presence, and beach-side programming",
+      width: 2400,
+      height: 2000,
+    },
+  },
+  {
+    slug: "palm-social-club",
+    name: "The Palm Social Club",
+    location: "Port Aransas, Texas",
+    composition: {
+      src: "/branding/psc.jpg",
+      alt: "The Palm Social Club brand identity translated across moodboard, interior, exterior, signage, brand-mark variations, cocktails, social presence, and live programming",
       width: 2400,
       height: 2000,
     },
