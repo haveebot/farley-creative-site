@@ -40,6 +40,30 @@ export default function PackagesPage() {
           </div>
         </header>
 
+        {/* Beyond the tiers — open-scope block. Signals capability beyond
+            the menu below: AI builds, custom back-end systems, complex
+            multi-discipline projects with sourced talent. Whole block is
+            a clickable link to /contact. */}
+        <Link
+          href="/contact"
+          className="block bg-butter-yellow text-warm-black px-6 py-16 md:py-20 border-t border-warm-black/10 transition hover:bg-butter-yellow/90"
+        >
+          <div className="max-w-3xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.3em] text-warm-black/70 mb-6">
+              Beyond the tiers
+            </p>
+            <p className="text-xl md:text-2xl leading-relaxed mb-8">
+              Curious about AI? Need a complex back-end system built? Have an
+              in-depth project in mind requiring high-tech nerds? Need a
+              copywriter, editor, or someone to source the right photographer
+              or PR partner?
+            </p>
+            <p className="text-2xl md:text-3xl font-serif italic">
+              Let&apos;s talk. We do it. →
+            </p>
+          </div>
+        </Link>
+
         {PACKAGE_FAMILIES.map((family) => (
           <section
             key={family.slug}
@@ -160,17 +184,18 @@ export default function PackagesPage() {
           </div>
         </section>
 
-        {/* Disclaimer + CTA */}
+        {/* Transparency closer — replaces the previous generic "On pricing"
+            disclaimer with C's sharper positioning copy. Same warm-black
+            slot, same CTA, harder-hitting body. */}
         <section className="bg-warm-black text-cream px-6 py-20">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-butter-yellow mb-4">
               On pricing
             </p>
             <p className="text-base md:text-lg leading-relaxed mb-10">
-              All prices vary with the scope of services needed and the
-              complexity of the project. We start with your business needs and
-              build from there — we&apos;ll tell you when a smaller tier is
-              the right call.
+              Our pricing, time, and planning are always 100% transparent.
+              There are agencies with hidden fees that pad the retainer — and
+              then there&apos;s Farley Creative. Direct and ready.
             </p>
             <Link
               href="/contact"
