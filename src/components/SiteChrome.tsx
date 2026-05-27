@@ -33,6 +33,7 @@ function Wordmark({ dark }: { dark: boolean }) {
 const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
+  { href: "/branding", label: "Branding" },
   { href: "/packages", label: "Packages" },
   { href: "/how-we-execute", label: "Process" },
   { href: "/contact", label: "Contact" },
