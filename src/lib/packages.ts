@@ -32,6 +32,7 @@ export type PackageFamily = {
   description: string;
   cadence: "project" | "monthly";
   tiers: PackageTier[];
+  footnote?: string;
 };
 
 export const PACKAGE_FAMILIES: PackageFamily[] = [
@@ -41,11 +42,13 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
     description:
       "Project-based engagements for brand identity, marketing systems, and launches. Pricing is starting point — scope shapes the final number.",
     cadence: "project",
+    footnote:
+      "Brand work is rarely one-size-fits-all. Each project is customized to your industry, audience, and goals — and scoped accordingly.",
     tiers: [
       {
         slug: "identity",
         name: "Identity",
-        price: "$500",
+        price: "$750",
         cadence: "project",
         positioning: "For early-stage brands establishing a credible visual footprint.",
         deliverables: [
@@ -58,7 +61,7 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
       {
         slug: "branding",
         name: "Branding",
-        price: "$1,500",
+        price: "$1,750",
         cadence: "project",
         positioning: "For brands ready for a full visual system — logo, typography, voice, the kit.",
         deliverables: [
@@ -73,7 +76,7 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
       {
         slug: "brand-launch",
         name: "Brand Launch",
-        price: "$5,000",
+        price: "$6,000",
         cadence: "project",
         positioning: "For founders launching a new venture — brand from concept to live.",
         highlight: true,
@@ -90,7 +93,7 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
       {
         slug: "enterprise-rebrand",
         name: "Enterprise Rebrand",
-        price: "$8,500",
+        price: "$8,500+",
         cadence: "project",
         positioning: "For established brands that need a comprehensive rebuild — strategy through execution.",
         deliverables: [
@@ -112,11 +115,13 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
     description:
       "Monthly retainers for social media strategy, content, and execution. Built to compound — not flame out.",
     cadence: "monthly",
+    footnote:
+      "Packages can be customized to meet your engagement needs and scaled accordingly.",
     tiers: [
       {
         slug: "seed",
         name: "Seed",
-        price: "$500/mo",
+        price: "$750/mo",
         cadence: "monthly",
         positioning: "For brands establishing a consistent social presence.",
         deliverables: [
@@ -130,7 +135,7 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
       {
         slug: "foundation",
         name: "Foundation",
-        price: "$750/mo",
+        price: "$1,000/mo",
         cadence: "monthly",
         positioning: "For brands building real engagement and audience habit.",
         deliverables: [
@@ -146,7 +151,7 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
       {
         slug: "growth",
         name: "Growth",
-        price: "$1,250/mo",
+        price: "$1,500/mo",
         cadence: "monthly",
         positioning: "For brands scaling their content output and starting paid amplification.",
         highlight: true,
@@ -165,7 +170,7 @@ export const PACKAGE_FAMILIES: PackageFamily[] = [
       {
         slug: "enterprise",
         name: "Enterprise",
-        price: "$2,000/mo",
+        price: "$2,250/mo",
         cadence: "monthly",
         positioning: "For brands treating social as a primary revenue channel — full execution.",
         deliverables: [
