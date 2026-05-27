@@ -31,7 +31,17 @@ export const BRANDING_EXAMPLES: BrandingExample[] = [
       height: 2000,
     },
   },
-  // Palm Republic — coming next
+  {
+    slug: "palm-republic",
+    name: "The Palm Republic",
+    location: "Port Aransas, Texas",
+    composition: {
+      src: "/branding/palm-republic.jpg",
+      alt: "The Palm Republic brand identity translated across the full brand book (primary flag logo, secondary marks, yacht club + university lockups, color palette, pattern), apparel (flag tee, hats, duffels), retail interior, in-store merchandising, and lived community use on the beach and the water",
+      width: 2400,
+      height: 2000,
+    },
+  },
   {
     slug: "palmfest",
     name: "PALMFEST",
