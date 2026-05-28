@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/brand/farleycreative-yellow-round.png",
-        width: 1024,
-        height: 1024,
-        alt: "Farley Creative",
+        url: "/og/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Farley Creative — where creative meets conversion",
       },
     ],
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Farley Creative",
     description: "Where creative meets conversion.",
-    images: ["/brand/farleycreative-yellow-round.png"],
+    images: ["/og/og-default.png"],
   },
   robots: {
     index: true,
