@@ -166,7 +166,7 @@ export default function HomePage() {
                 Identity · Branding · Brand Launch · Enterprise Rebrand. From
                 logo systems to full rebrands and launches.
               </p>
-              <p className="text-sm font-semibold mb-1">From $500</p>
+              <p className="text-sm font-semibold mb-1">$750</p>
               <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition mt-4">
                 See all tiers →
               </p>
@@ -185,7 +185,7 @@ export default function HomePage() {
                 Seed · Foundation · Growth · Enterprise. Strategy, content,
                 paid amplification — built to compound.
               </p>
-              <p className="text-sm font-semibold mb-1">From $500/mo</p>
+              <p className="text-sm font-semibold mb-1">$750/mo</p>
               <p className="text-xs italic text-forest-teal opacity-60 group-hover:opacity-100 transition mt-4">
                 See all tiers →
               </p>
