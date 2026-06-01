@@ -154,7 +154,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link
               href="/packages#brand-marketing"
-              className="block border border-warm-black/15 p-8 hover:border-forest-teal transition group"
+              className="block bg-[#cadcd4] border border-warm-black/15 p-8 hover:border-forest-teal transition group"
             >
               <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-3">
                 Project-based · 4 tiers
@@ -173,7 +173,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/packages#social-media"
-              className="block border border-warm-black/15 p-8 hover:border-forest-teal transition group"
+              className="block bg-[#cadcd4] border border-warm-black/15 p-8 hover:border-forest-teal transition group"
             >
               <p className="text-[10px] uppercase tracking-[0.25em] text-forest-teal mb-3">
                 Monthly retainer · 4 tiers
