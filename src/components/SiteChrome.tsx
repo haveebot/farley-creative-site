@@ -14,18 +14,25 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function Wordmark({ dark }: { dark: boolean }) {
+  // Dark header (every route currently): use Collie's exact designed lockup.
+  if (dark) {
+    return (
+      <Image
+        src="/brand/farleycreative-wordmark.png"
+        alt="Farley Creative"
+        width={1200}
+        height={220}
+        priority
+        className="h-7 md:h-8 w-auto"
+      />
+    );
+  }
+  // Light/cream header fallback (not used on any route today) — live text in
+  // brand colors so the wordmark stays legible if a light header is ever added.
   return (
     <span className="font-serif italic text-xl md:text-2xl leading-none tracking-tight whitespace-nowrap">
-      <span className={dark ? "text-butter-yellow" : "text-forest-teal"}>
-        farley
-      </span>
-      <span
-        className={`font-sans not-italic font-bold ${
-          dark ? "text-cream" : "text-warm-black"
-        }`}
-      >
-        creative
-      </span>
+      <span className="text-forest-teal">farley</span>
+      <span className="font-sans not-italic font-bold text-warm-black">creative</span>
     </span>
   );
 }
