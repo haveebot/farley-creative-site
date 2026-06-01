@@ -14,15 +14,16 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function Wordmark({ dark }: { dark: boolean }) {
-  // Dark header (every route currently): use Collie's exact designed lockup.
+  // Dark header (every route currently): Collie's exact designed lockup as an
+  // outlined-path SVG. Plain <img> (not next/image) so it skips the image
+  // optimizer, which rejects SVG unless dangerouslyAllowSVG is set — vector
+  // needs no optimization and this asset is first-party/trusted.
   if (dark) {
     return (
-      <Image
-        src="/brand/farleycreative-wordmark.png"
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src="/brand/farleycreative-wordmark.svg"
         alt="Farley Creative"
-        width={1200}
-        height={220}
-        priority
         className="h-7 md:h-8 w-auto"
       />
     );
