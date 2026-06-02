@@ -68,7 +68,7 @@ export default function HowWeExecutePage() {
                 <p className="text-xs uppercase tracking-[0.25em] text-warm-black/50 mb-3">
                   Hiring in-house
                 </p>
-                <ul className="space-y-2 text-sm leading-relaxed">
+                <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5 marker:text-warm-black/40">
                   <li>Salary + benefits + training overhead</li>
                   <li>3–6 months to ramp on your business</li>
                   <li>One person&apos;s skill set</li>
@@ -79,9 +79,9 @@ export default function HowWeExecutePage() {
                 <p className="text-xs uppercase tracking-[0.25em] text-forest-teal mb-3">
                   Farley Creative
                 </p>
-                <ul className="space-y-2 text-sm leading-relaxed">
+                <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5 marker:text-forest-teal">
                   <li>Costs less than a senior salary</li>
-                  <li>Plug in &amp; begin executing within 7–30 days</li>
+                  <li>Plug in &amp; begin executing within 72 hours of agency engagement</li>
                   <li>Strategy, design, copy, paid, social — one team</li>
                   <li>Scope-tight, retainer-clean, no hiring risk</li>
                 </ul>
