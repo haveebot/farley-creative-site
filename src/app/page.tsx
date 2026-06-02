@@ -14,6 +14,7 @@ import Link from "next/link";
 import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
 import { Reveal } from "@/components/Reveal";
 import { CASE_STUDIES } from "@/lib/case-studies";
+import { LogoTicker } from "@/components/LogoTicker";
 
 export default function HomePage() {
   return (
@@ -23,9 +24,12 @@ export default function HomePage() {
       {/* HERO — black band, centered wordmark + spaced-caps tagline. */}
       <section className="bg-warm-black text-cream flex flex-col items-center justify-center px-6 py-24 md:py-32">
         <div className="text-center">
-          <p className="font-serif italic text-butter-yellow text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-tight animate-fade-in">
-            farley<span className="font-sans not-italic font-bold text-cream">creative</span>
-          </p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/farleycreative-wordmark.svg"
+            alt="Farley Creative"
+            className="w-full max-w-[720px] h-auto mx-auto animate-fade-in"
+          />
           <p className="mt-8 md:mt-10 text-[11px] sm:text-xs md:text-sm tracking-[0.32em] uppercase text-cream/85 animate-fade-in-delayed">
             Bridging the gap between creative and conversion
           </p>
@@ -67,6 +71,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* BRANDS I'VE WORKED WITH — white-logo marquee on a dark band */}
+      <LogoTicker />
 
       {/* SELECTED WORK — 6 case studies per Collie's mockup (PAL, PSC, Palm Republic, PALMFEST, Sage Em, Cinnamon Shore) */}
       <section id="work" className="bg-cream text-warm-black px-6 py-24">
