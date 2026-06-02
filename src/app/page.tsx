@@ -24,9 +24,12 @@ export default function HomePage() {
       {/* HERO — black band, centered wordmark + spaced-caps tagline. */}
       <section className="bg-warm-black text-cream flex flex-col items-center justify-center px-6 py-24 md:py-32">
         <div className="text-center">
-          <p className="font-serif italic text-butter-yellow text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-tight animate-fade-in">
-            farley<span className="font-sans not-italic font-bold text-cream">creative</span>
-          </p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/farleycreative-wordmark.svg"
+            alt="Farley Creative"
+            className="w-full max-w-[720px] h-auto mx-auto animate-fade-in"
+          />
           <p className="mt-8 md:mt-10 text-[11px] sm:text-xs md:text-sm tracking-[0.32em] uppercase text-cream/85 animate-fade-in-delayed">
             Bridging the gap between creative and conversion
           </p>
