@@ -14,6 +14,7 @@ import Link from "next/link";
 import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
 import { Reveal } from "@/components/Reveal";
 import { CASE_STUDIES } from "@/lib/case-studies";
+import { LogoTicker } from "@/components/LogoTicker";
 
 export default function HomePage() {
   return (
@@ -67,6 +68,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* BRANDS I'VE WORKED WITH — white-logo marquee on a dark band */}
+      <LogoTicker />
 
       {/* SELECTED WORK — 6 case studies per Collie's mockup (PAL, PSC, Palm Republic, PALMFEST, Sage Em, Cinnamon Shore) */}
       <section id="work" className="bg-cream text-warm-black px-6 py-24">

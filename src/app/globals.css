@@ -135,3 +135,26 @@ html, body {
   line-height: 1;
   color: var(--color-forest-teal);
 }
+
+/* Logo ticker — seamless infinite marquee. The track holds two identical
+ * copies of the logo set; translating -50% advances exactly one copy, so the
+ * loop is seamless. Pauses on hover; static (no scroll) under reduced-motion. */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 55s linear infinite;
+}
+.ticker-viewport:hover .ticker-track {
+  animation-play-state: paused;
+}
+.ticker-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
