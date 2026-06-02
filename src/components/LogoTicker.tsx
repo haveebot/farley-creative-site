@@ -33,11 +33,11 @@ export function LogoTicker() {
   const loop = [...LOGOS, ...LOGOS];
   return (
     <section
-      aria-label="Brands I've worked with"
-      className="bg-warm-black py-12 md:py-16 overflow-hidden"
+      aria-label="Brands we've worked with"
+      className="bg-warm-black/90 py-8 md:py-10 overflow-hidden"
     >
-      <p className="text-center text-[10px] uppercase tracking-[0.3em] text-cream/40 mb-9">
-        Brands I&apos;ve worked with
+      <p className="text-center text-[10px] uppercase tracking-[0.3em] text-cream/40 mb-6">
+        Brands we&apos;ve worked with
       </p>
       <div className="ticker-viewport ticker-fade">
         <div className="ticker-track">
