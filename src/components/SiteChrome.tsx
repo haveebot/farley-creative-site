@@ -75,12 +75,12 @@ export function HeaderNav({ dark = true }: { dark?: boolean }) {
           <Link href="/" className="flex items-center group" aria-label="Farley Creative — Home">
             <Wordmark dark={dark} />
           </Link>
-          <nav className="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em]">
+          <nav className="hidden lg:flex items-center gap-6 text-xs uppercase tracking-[0.2em]">
             {NAV_LINKS.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`${hoverColor} transition`}
+                className={`${hoverColor} whitespace-nowrap transition`}
               >
                 {l.label}
               </Link>
@@ -91,7 +91,7 @@ export function HeaderNav({ dark = true }: { dark?: boolean }) {
             aria-label="Open menu"
             aria-expanded={open}
             onClick={() => setOpen(true)}
-            className="md:hidden p-2 -mr-2"
+            className="lg:hidden p-2 -mr-2"
           >
             <svg
               width="22"
