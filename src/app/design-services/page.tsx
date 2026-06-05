@@ -33,7 +33,7 @@ export default function DesignServicesPage() {
 
         {/* Hero — C's full composition; the pictured CTA is a real link. */}
         <section
-          className="px-6 pt-8 md:pt-12"
+          className="px-6 pt-6 md:pt-10"
           style={{ backgroundColor: DS_HERO.bg }}
         >
           <div className="max-w-6xl mx-auto relative">
@@ -66,8 +66,8 @@ export default function DesignServicesPage() {
             style={{ backgroundColor: s.bg }}
             className={
               s.tight
-                ? "px-6 pt-3 md:pt-5 pb-14 md:pb-16"
-                : "px-6 py-14 md:py-16 border-t border-warm-black/10"
+                ? "px-6 pt-2 md:pt-4 pb-8 md:pb-12"
+                : "px-6 py-8 md:py-12 border-t border-warm-black/10"
             }
           >
             <div className="max-w-6xl mx-auto">
