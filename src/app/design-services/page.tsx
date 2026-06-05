@@ -31,18 +31,18 @@ export default function DesignServicesPage() {
           consultation
         </h1>
 
-        {/* Hero — C's full composition; the pictured CTA is a real link. */}
+        {/* Hero — C's full composition, full-bleed; pictured CTA is a real link. */}
         <section
-          className="px-6 pt-6 md:pt-10"
+          className="pt-6 md:pt-10"
           style={{ backgroundColor: DS_HERO.bg }}
         >
-          <div className="max-w-6xl mx-auto relative">
+          <div className="relative">
             <Image
               src={DS_HERO.src}
               alt={DS_HERO.alt}
               width={DS_HERO.width}
               height={DS_HERO.height}
-              sizes="(min-width: 1024px) 1100px, 100vw"
+              sizes="100vw"
               priority
               className="w-full h-auto block"
             />
@@ -66,25 +66,23 @@ export default function DesignServicesPage() {
             style={{ backgroundColor: s.bg }}
             className={
               s.tight
-                ? "px-6 pt-2 md:pt-4 pb-8 md:pb-12"
-                : "px-6 py-8 md:py-12 border-t border-warm-black/10"
+                ? "pt-2 md:pt-4 pb-8 md:pb-12"
+                : "py-8 md:py-12 border-t border-warm-black/10"
             }
           >
-            <div className="max-w-6xl mx-auto">
-              {s.eyebrow && (
-                <p className="text-xs uppercase tracking-[0.3em] text-forest-teal mb-8">
-                  {s.eyebrow}
-                </p>
-              )}
-              <Image
-                src={s.src}
-                alt={s.alt}
-                width={s.width}
-                height={s.height}
-                sizes="(min-width: 1024px) 1100px, 100vw"
-                className="w-full h-auto block"
-              />
-            </div>
+            {s.eyebrow && (
+              <p className="px-6 text-xs uppercase tracking-[0.3em] text-forest-teal mb-6">
+                {s.eyebrow}
+              </p>
+            )}
+            <Image
+              src={s.src}
+              alt={s.alt}
+              width={s.width}
+              height={s.height}
+              sizes="100vw"
+              className="w-full h-auto block"
+            />
           </section>
         ))}
 
