@@ -32,7 +32,10 @@ export default function DesignServicesPage() {
         </h1>
 
         {/* Hero — C's full composition; the pictured CTA is a real link. */}
-        <section className="px-6 pt-8 md:pt-12">
+        <section
+          className="px-6 pt-8 md:pt-12"
+          style={{ backgroundColor: DS_HERO.bg }}
+        >
           <div className="max-w-6xl mx-auto relative">
             <Image
               src={DS_HERO.src}
@@ -60,6 +63,7 @@ export default function DesignServicesPage() {
           <section
             key={s.slug}
             id={s.slug}
+            style={{ backgroundColor: s.bg }}
             className={
               s.tight
                 ? "px-6 pt-3 md:pt-5 pb-14 md:pb-16"
