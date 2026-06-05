@@ -42,6 +42,7 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
   { href: "/branding", label: "Branding" },
+  { href: "/design-services", label: "Design Services" },
   { href: "/packages", label: "Packages" },
   { href: "/how-we-execute", label: "Process" },
   { href: "/contact", label: "Contact" },
@@ -74,12 +75,12 @@ export function HeaderNav({ dark = true }: { dark?: boolean }) {
           <Link href="/" className="flex items-center group" aria-label="Farley Creative — Home">
             <Wordmark dark={dark} />
           </Link>
-          <nav className="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em]">
+          <nav className="hidden lg:flex items-center gap-6 text-xs uppercase tracking-[0.2em]">
             {NAV_LINKS.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`${hoverColor} transition`}
+                className={`${hoverColor} whitespace-nowrap transition`}
               >
                 {l.label}
               </Link>
@@ -90,7 +91,7 @@ export function HeaderNav({ dark = true }: { dark?: boolean }) {
             aria-label="Open menu"
             aria-expanded={open}
             onClick={() => setOpen(true)}
-            className="md:hidden p-2 -mr-2"
+            className="lg:hidden p-2 -mr-2"
           >
             <svg
               width="22"
@@ -191,6 +192,7 @@ export function SiteFooter() {
               <li><Link href="/about" className="hover:text-butter-yellow transition">About</Link></li>
               <li><Link href="/work" className="hover:text-butter-yellow transition">Work</Link></li>
               <li><Link href="/branding" className="hover:text-butter-yellow transition">Branding</Link></li>
+              <li><Link href="/design-services" className="hover:text-butter-yellow transition">Design Services</Link></li>
               <li><Link href="/experience" className="hover:text-butter-yellow transition">Experience</Link></li>
               <li><Link href="/packages" className="hover:text-butter-yellow transition">Packages</Link></li>
               <li><Link href="/how-we-execute" className="hover:text-butter-yellow transition">Process</Link></li>
