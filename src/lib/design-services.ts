@@ -63,7 +63,7 @@ export const DS_SECTIONS: DesignImage[] = [
     src: "/design-services/meet-christi.jpg",
     alt: "Fine art and design consultation — meet Christi Farley, Art and Interior Design Consultant for Farley Creative, available for commissions and interior design consultation.",
     width: 2400,
-    height: 2000,
+    height: 1252,
     bg: "#F0EDEA",
   },
   {
