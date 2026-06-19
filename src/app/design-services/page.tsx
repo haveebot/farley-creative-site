@@ -75,14 +75,31 @@ export default function DesignServicesPage() {
                 {s.eyebrow}
               </p>
             )}
-            <Image
-              src={s.src}
-              alt={s.alt}
-              width={s.width}
-              height={s.height}
-              sizes="100vw"
-              className="w-full h-auto block"
-            />
+            <div className="relative">
+              <Image
+                src={s.src}
+                alt={s.alt}
+                width={s.width}
+                height={s.height}
+                sizes="100vw"
+                className="w-full h-auto block"
+              />
+              {/* Real link sitting on a button pictured in the composition. */}
+              {s.cta && (
+                <Link
+                  href={s.cta.href}
+                  className="absolute z-10"
+                  style={{
+                    left: s.cta.left,
+                    top: s.cta.top,
+                    width: s.cta.width,
+                    height: s.cta.height,
+                  }}
+                >
+                  <span className="sr-only">{s.cta.label}</span>
+                </Link>
+              )}
+            </div>
           </section>
         ))}
 

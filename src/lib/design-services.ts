@@ -28,6 +28,20 @@ export type DesignImage = {
   eyebrow?: string;
   /** When true, the section flows under the previous one (no divider / tight top). */
   tight?: boolean;
+  /**
+   * A real link overlaid on a button pictured inside the composition (same
+   * trick as the hero's "Let's Start Designing" CTA). Coords are percentages
+   * of the image, so the hit area tracks the button at every viewport width.
+   */
+  cta?: {
+    href: string;
+    /** sr-only label announced for the link. */
+    label: string;
+    left: string;
+    top: string;
+    width: string;
+    height: string;
+  };
 };
 
 export const DS_HERO: DesignImage = {
@@ -61,10 +75,18 @@ export const DS_SECTIONS: DesignImage[] = [
   {
     slug: "meet-christi",
     src: "/design-services/meet-christi.jpg",
-    alt: "Fine art and design consultation — meet Christi Farley, Art and Interior Design Consultant for Farley Creative, available for commissions and interior design consultation.",
+    alt: "Meet Christi Farley — Art and Interior Design Consultant for Farley Creative. A retired interior designer with 34 years at the Susan Castor Collection and a degree in fine arts, available for commissioned original watercolor art, architectural watercolor renderings, and select interior design projects.",
     width: 2400,
-    height: 1252,
-    bg: "#F0EDEA",
+    height: 1590,
+    bg: "#F2EEEC",
+    cta: {
+      href: "/contact",
+      label: "Reach out to commission Christi — get in touch",
+      left: "9.8%",
+      top: "88.5%",
+      width: "25.3%",
+      height: "9.2%",
+    },
   },
   {
     slug: "interiors",
