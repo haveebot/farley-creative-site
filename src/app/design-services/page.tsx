@@ -75,7 +75,7 @@ export default function DesignServicesPage() {
                 {s.eyebrow}
               </p>
             )}
-            <div className="relative">
+            <div className={`relative${s.mobile ? " hidden md:block" : ""}`}>
               <Image
                 src={s.src}
                 alt={s.alt}
@@ -100,6 +100,40 @@ export default function DesignServicesPage() {
                 </Link>
               )}
             </div>
+
+            {/* Mobile: the same section reflowed as real text — the baked
+                composition's body copy is unreadable at phone width. */}
+            {s.mobile && (
+              <div className="md:hidden px-6">
+                <Image
+                  src={s.mobile.portrait.src}
+                  alt={s.mobile.portrait.alt}
+                  width={s.mobile.portrait.width}
+                  height={s.mobile.portrait.height}
+                  sizes="(max-width: 768px) 80vw, 300px"
+                  className="w-full max-w-[300px] h-auto block mb-7"
+                />
+                <p className="font-serif italic text-3xl leading-tight text-warm-black mb-2">
+                  {s.mobile.headline}
+                </p>
+                <p className="text-xs uppercase tracking-[0.28em] text-warm-black/55 mb-5">
+                  {s.mobile.eyebrow}
+                </p>
+                <div className="space-y-4 bg-[#F8F4B9] px-5 py-6 text-[15px] leading-relaxed text-warm-black/90">
+                  {s.mobile.body.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+                {s.cta && (
+                  <Link
+                    href={s.cta.href}
+                    className="mt-7 inline-block bg-[#3C3628] text-cream px-10 py-3.5 text-sm uppercase tracking-[0.15em] hover:opacity-90 transition"
+                  >
+                    Reach Out
+                  </Link>
+                )}
+              </div>
+            )}
           </section>
         ))}
 
