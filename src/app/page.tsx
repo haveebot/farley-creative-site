@@ -16,6 +16,38 @@ import { Reveal } from "@/components/Reveal";
 import { CASE_STUDIES } from "@/lib/case-studies";
 import { LogoTicker } from "@/components/LogoTicker";
 
+const SERVICE_CARDS = [
+  {
+    title: "Single Serve",
+    blurb: "Project-based services supporting your team with immediate execution.",
+    img: "/services/single-serve.jpg",
+    alt: "Farley Creative branded can on a market table",
+    cta: "Let's get to work",
+    href: "/contact",
+    btn: "bg-soft-mint",
+  },
+  {
+    title: "Agency Partnership",
+    blurb:
+      "One-stop-shop agency engagement aligned with your project and business at any stage.",
+    img: "/services/agency-partnership.jpg",
+    alt: "Farley Creative storefront with striped awnings",
+    cta: "Let's dive in",
+    href: "/contact",
+    btn: "bg-butter-yellow",
+  },
+  {
+    title: "Pick Your Services",
+    blurb:
+      "Select the services right for your business needs with transparent pricing.",
+    img: "/services/pick-your-services.jpg",
+    alt: "Farley Creative branded service cans on a market table",
+    cta: "Customize a package",
+    href: "/packages",
+    btn: "bg-soft-mint",
+  },
+];
+
 export default function HomePage() {
   return (
     <main>
@@ -71,6 +103,49 @@ export default function HomePage() {
             >
               About Us →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES — three ways to engage: single serve / agency / pick-your-services */}
+      <section id="services">
+        <div className="bg-warm-black text-butter-yellow px-6 py-7 md:py-9">
+          <h2 className="max-w-6xl mx-auto text-center font-serif italic leading-snug text-lg sm:text-xl md:text-2xl lg:text-[1.75rem]">
+            From freelance projects to full-stack agency engagement - we&rsquo;re
+            ready to plug into your project.
+          </h2>
+        </div>
+        <div className="bg-cream text-warm-black px-6 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12">
+            {SERVICE_CARDS.map((c, i) => (
+              <Reveal
+                key={c.title}
+                delay={i * 90}
+                className="flex flex-col items-center text-center"
+              >
+                <h3 className="text-lg md:text-xl font-bold uppercase tracking-wide mb-4">
+                  {c.title}
+                </h3>
+                <p className="font-serif italic text-base md:text-lg leading-snug mb-7 max-w-xs">
+                  {c.blurb}
+                </p>
+                <div className="relative w-full aspect-[3/2] overflow-hidden rounded-2xl mb-7">
+                  <Image
+                    src={c.img}
+                    alt={c.alt}
+                    fill
+                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 33vw, 90vw"
+                    className="object-cover"
+                  />
+                </div>
+                <Link
+                  href={c.href}
+                  className={`block w-full max-w-[260px] text-center ${c.btn} text-warm-black text-xs md:text-sm uppercase tracking-[0.28em] px-6 py-4 leading-relaxed hover:opacity-90 transition`}
+                >
+                  {c.cta}
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
