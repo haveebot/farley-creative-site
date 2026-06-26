@@ -140,7 +140,7 @@ export default function HomePage() {
                 </div>
                 <Link
                   href={c.href}
-                  className={`block w-full max-w-[260px] text-center ${c.btn} text-warm-black text-xs md:text-sm uppercase tracking-[0.28em] px-6 py-4 leading-relaxed hover:opacity-90 transition`}
+                  className={`block w-full max-w-[200px] text-center ${c.btn} text-warm-black text-xs md:text-sm uppercase tracking-[0.28em] px-6 py-4 leading-relaxed hover:opacity-90 transition`}
                 >
                   {c.cta}
                 </Link>
