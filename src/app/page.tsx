@@ -29,7 +29,7 @@ export default function HomePage() {
             src="/brand/fc-mark.png"
             alt=""
             aria-hidden="true"
-            className="w-[88px] md:w-[128px] h-auto mx-auto mb-10 md:mb-12 animate-fade-in"
+            className="w-[88px] md:w-[128px] h-auto mx-auto mb-6 md:mb-8 animate-fade-in"
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -48,7 +48,7 @@ export default function HomePage() {
       <section id="about" className="text-warm-black">
         <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
           <Reveal className="md:col-span-8 bg-butter-yellow px-6 md:px-16 py-20 md:py-24">
-            <div className="max-w-2xl ml-auto">
+            <div className="max-w-4xl">
               <h2 className="text-3xl md:text-4xl font-serif italic leading-tight mb-10">
                 Strategic marketing partners — zero fluff, immediate execution.
               </h2>
