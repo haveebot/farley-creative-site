@@ -21,16 +21,23 @@ export default function HomePage() {
     <main>
       <HeaderNav />
 
-      {/* HERO — black band, centered wordmark + spaced-caps tagline. */}
+      {/* HERO — black band: fc mark, centered wordmark, spaced-caps tagline. */}
       <section className="bg-warm-black text-cream flex flex-col items-center justify-center px-6 py-24 md:py-32">
         <div className="text-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            src="/brand/fc-mark.png"
+            alt=""
+            aria-hidden="true"
+            className="w-[88px] md:w-[128px] h-auto mx-auto mb-10 md:mb-12 animate-fade-in"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/brand/farleycreative-wordmark.svg"
             alt="Farley Creative"
-            className="w-full max-w-[720px] h-auto mx-auto animate-fade-in"
+            className="w-full max-w-[600px] md:max-w-[820px] h-auto mx-auto animate-fade-in"
           />
-          <p className="mt-8 md:mt-10 text-[11px] sm:text-xs md:text-sm tracking-[0.32em] uppercase text-cream/85 animate-fade-in-delayed">
+          <p className="mt-8 md:mt-10 text-xs sm:text-sm md:text-base tracking-[0.3em] uppercase text-cream/85 animate-fade-in-delayed">
             Bridging the gap between creative and conversion
           </p>
         </div>
@@ -48,25 +55,21 @@ export default function HomePage() {
               <p className="text-base md:text-lg leading-relaxed mb-6">
                 Farley Creative bridges the gap between creative and conversion —
                 translating creative vision into scalable systems that connect
-                brand, space, events, and marketing. Founded by Collie Farley, with
-                experience spanning hospitality, retail, real estate, non-profit,
-                and lifestyle brands.
+                brand, space, events, and marketing.
               </p>
               <p className="text-base md:text-lg leading-relaxed">
                 We blend the high-touch, fast-paced adaptability of a seasoned
                 freelancer with the founder-first perspective and comprehensive
-                power of a full-service agency. We&apos;ve mastered the art of
-                moving fast, testing what works, and pivoting strategies at the
-                rate of business.
+                power of a full-service agency.
               </p>
             </div>
           </Reveal>
           <div className="md:col-span-4 relative stripe-panel-butter min-h-[220px] md:min-h-0 flex items-center justify-center py-12 md:py-0">
             <Link
               href="/about"
-              className="inline-block bg-soft-mint text-forest-teal text-xs md:text-sm uppercase tracking-[0.28em] px-10 py-5 hover:bg-forest-teal hover:text-cream transition shadow-sm"
+              className="inline-block bg-soft-mint border border-warm-black/80 text-warm-black text-xs md:text-sm uppercase tracking-[0.28em] px-10 py-5 hover:bg-forest-teal hover:text-cream hover:border-forest-teal transition"
             >
-              About →
+              About Us →
             </Link>
           </div>
         </div>
