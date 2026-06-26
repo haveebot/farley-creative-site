@@ -26,10 +26,11 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/brand/farleycreative-yellow-round.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/brand/farleycreative-favicon.png", type: "image/png", sizes: "48x48" },
     ],
-    shortcut: "/brand/farleycreative-yellow-round.png",
-    apple: "/brand/farleycreative-yellow-round.png",
+    shortcut: "/favicon.ico",
+    apple: "/brand/farleycreative-favicon-180.png",
   },
   openGraph: {
     title: "Farley Creative",
