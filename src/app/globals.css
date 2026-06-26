@@ -66,16 +66,16 @@ html, body {
     var(--color-cream) 24px
   );
 }
-/* Vertical butter-yellow + cream stripes — used as About-section side panel.
- * Wider bands (28px each) than the small motif so it reads as a structural
+/* Vertical butter-yellow + soft-mint stripes — used as About-section side panel.
+ * Wider bands (56px each) than the small motif so it reads as a structural
  * pattern, not a fine texture. */
 .stripe-panel-butter {
   background-image: repeating-linear-gradient(
     to right,
     var(--color-butter-yellow) 0,
-    var(--color-butter-yellow) 28px,
-    var(--color-cream) 28px,
-    var(--color-cream) 56px
+    var(--color-butter-yellow) 56px,
+    var(--color-soft-mint) 56px,
+    var(--color-soft-mint) 112px
   );
 }
 
