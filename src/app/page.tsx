@@ -49,7 +49,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
           <Reveal className="md:col-span-8 bg-butter-yellow px-6 md:px-16 py-20 md:py-24">
             <div className="max-w-4xl">
-              <h2 className="text-3xl md:text-4xl font-serif italic leading-tight mb-10">
+              <h2 className="text-2xl md:text-3xl font-serif italic leading-tight mb-10">
                 Strategic marketing partners — zero fluff, immediate execution.
               </h2>
               <p className="text-base md:text-lg leading-relaxed mb-6">
