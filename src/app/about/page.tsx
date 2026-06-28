@@ -17,7 +17,7 @@ import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
 export const metadata = {
   title: "About",
   description:
-    "Founder-operator marketing and branding agency led by Collie Farley, serving Texas, the Hill Country, and the Gulf Coast. Where creative meets conversion.",
+    "Founder-operator marketing and branding agency led by Collie Farley, based in Boerne, Texas and serving the Hill Country, San Antonio, and beyond. Where creative meets conversion.",
   alternates: { canonical: "/about" },
 };
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
         <section className="bg-cream">
           <h1 className="sr-only">
             About Farley Creative — founder-operator marketing and branding
-            agency in Texas, led by Collie Farley
+            agency in Boerne, Texas, led by Collie Farley
           </h1>
           <Image
             src="/about/hero-stripe-banner.jpg"

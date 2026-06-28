@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s · Farley Creative",
   },
   description:
-    "Farley Creative is a founder-operator marketing and branding agency serving Texas — the Hill Country, San Antonio, Austin, and the Gulf Coast. Brand strategy, visual identity, web, and multi-channel marketing. Where creative meets conversion.",
+    "Farley Creative is a founder-operator marketing and branding agency based in Boerne, Texas, serving the Hill Country, San Antonio, Austin, and beyond. Brand strategy, visual identity, web, and multi-channel marketing. Where creative meets conversion.",
   applicationName: "Farley Creative",
   authors: [{ name: "Collie Farley" }],
   creator: "Collie Farley",
@@ -96,19 +96,25 @@ const SITE_SCHEMA = {
       },
       image: `${SITE}/og/og-default.png`,
       description:
-        "Founder-operator marketing and branding agency serving Texas — the Hill Country, San Antonio, Austin, and the Gulf Coast. Brand strategy, visual identity, web, and multi-channel marketing.",
+        "Founder-operator marketing and branding agency based in Boerne, Texas, serving the Hill Country, San Antonio, Austin, and beyond. Brand strategy, visual identity, web, and multi-channel marketing.",
       founder: { "@id": `${SITE}/#collie` },
       address: {
         "@type": "PostalAddress",
+        addressLocality: "Boerne",
         addressRegion: "TX",
         addressCountry: "US",
       },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 29.7947,
+        longitude: -98.732,
+      },
       areaServed: [
         { "@type": "State", name: "Texas" },
+        { "@type": "City", name: "Boerne, Texas" },
         { "@type": "Place", name: "Texas Hill Country" },
         { "@type": "City", name: "San Antonio, Texas" },
         { "@type": "City", name: "Austin, Texas" },
-        { "@type": "City", name: "Boerne, Texas" },
         { "@type": "City", name: "Port Aransas, Texas" },
       ],
       email: "collie@farleycreative.com",
