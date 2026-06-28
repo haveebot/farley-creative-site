@@ -13,14 +13,56 @@ import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
 import { PACKAGE_FAMILIES } from "@/lib/packages";
 
 export const metadata = {
-  title: "Packages",
+  title: "Packages & Pricing",
   description:
-    "Brand & Marketing project packages and Social Media monthly retainers. Tiered, transparent, customized to the needs of your business.",
+    "Transparent pricing for a Texas marketing and branding agency: Brand & Marketing project packages and Social Media monthly retainers. Tiered, customized to your business.",
+  alternates: { canonical: "/packages" },
+};
+
+// Build an OfferCatalog from the tier data so pricing is machine-readable
+// (eligible for pricing rich results). Strip formatting to a numeric price.
+const PACKAGES_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Marketing & Branding Packages",
+  provider: { "@id": "https://farleycreative.com/#organization" },
+  areaServed: { "@type": "State", name: "Texas" },
+  url: "https://farleycreative.com/packages",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Farley Creative Packages",
+    itemListElement: PACKAGE_FAMILIES.map((fam) => ({
+      "@type": "OfferCatalog",
+      name: fam.name,
+      itemListElement: fam.tiers.map((t) => {
+        const price = t.price.replace(/[^0-9]/g, "");
+        return {
+          "@type": "Offer",
+          name: t.name,
+          description: t.positioning,
+          ...(price
+            ? {
+                priceSpecification: {
+                  "@type": "PriceSpecification",
+                  price,
+                  priceCurrency: "USD",
+                },
+              }
+            : {}),
+          itemOffered: { "@type": "Service", name: `${fam.name} — ${t.name}` },
+        };
+      }),
+    })),
+  },
 };
 
 export default function PackagesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PACKAGES_SCHEMA) }}
+      />
       <HeaderNav />
       <main className="bg-cream text-warm-black">
         <header className="px-6 pt-24 pb-12">

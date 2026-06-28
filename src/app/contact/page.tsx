@@ -4,7 +4,8 @@ import ContactForm from "./ContactForm";
 export const metadata = {
   title: "Contact",
   description:
-    "Tell us what you're building. Brand strategy, identity, multi-channel marketing, event design, retail/hospitality brand development.",
+    "Tell us what you're building. Brand strategy, identity, multi-channel marketing, and event design from a Texas marketing and branding agency serving the Hill Country, San Antonio, and the Gulf Coast.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

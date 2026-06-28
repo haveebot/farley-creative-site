@@ -35,9 +35,22 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = getCaseStudy(slug);
   if (!c) return { title: "Case study" };
+  const ogImage = c.header_banner?.src ?? c.hero?.src;
+  const url = `https://farleycreative.com/work/${c.slug}`;
   return {
     title: `${c.title} — case study`,
     description: c.hook_short,
+    alternates: { canonical: `/work/${c.slug}` },
+    openGraph: {
+      title: `${c.title} · Farley Creative`,
+      description: c.hook_short,
+      url,
+      type: "article",
+      ...(ogImage ? { images: [{ url: ogImage, alt: c.title }] } : {}),
+    },
+    ...(ogImage
+      ? { twitter: { card: "summary_large_image", images: [ogImage] } }
+      : {}),
   };
 }
 
@@ -72,8 +85,39 @@ export default async function CaseStudyPage({
   // photo. Sage Em falls through to feature_quote.
   const headerImage = c.header_banner ?? c.hero;
 
+  const url = `https://farleycreative.com/work/${c.slug}`;
+  const caseSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "@id": `${url}#work`,
+        name: c.title,
+        headline: c.title,
+        description: c.hook_short,
+        url,
+        ...(headerImage ? { image: `https://farleycreative.com${headerImage.src}` } : {}),
+        ...(c.year ? { dateCreated: String(c.year) } : {}),
+        creator: { "@id": "https://farleycreative.com/#organization" },
+        about: c.kind,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://farleycreative.com" },
+          { "@type": "ListItem", position: 2, name: "Work", item: "https://farleycreative.com/work" },
+          { "@type": "ListItem", position: 3, name: c.title, item: url },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseSchema) }}
+      />
       <HeaderNav />
       <main className="bg-cream text-warm-black">
         {/* HERO — full-bleed banner or feature-quote fallback */}

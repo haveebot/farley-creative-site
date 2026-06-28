@@ -56,6 +56,10 @@ export default function HomePage() {
       {/* HERO — black band: fc mark, centered wordmark, spaced-caps tagline. */}
       <section className="bg-warm-black text-cream flex flex-col items-center justify-center px-6 py-24 md:py-32">
         <div className="text-center">
+          <h1 className="sr-only">
+            Farley Creative — marketing and branding agency serving Texas, the
+            Hill Country, San Antonio, and the Gulf Coast
+          </h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/brand/fc-mark.png"

@@ -18,6 +18,7 @@ export const metadata = {
   title: "Branding Beyond the Book",
   description:
     "Selected branding identities that translated beyond the design book — spanning industries, products, events, and lived experiences.",
+  alternates: { canonical: "/branding" },
 };
 
 export default function BrandingPage() {
