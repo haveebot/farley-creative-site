@@ -19,6 +19,7 @@ export const metadata = {
   title: "Design Services",
   description:
     "Graphic design, fine art, and consultation services from Farley Creative — logo packages, social templates, invitations, branded template bundles, websites, branding & identity, signage, product & packaging, event design, and interior design consultation. If it involves design, we can do it. No project too small.",
+  alternates: { canonical: "/design-services" },
 };
 
 export default function DesignServicesPage() {

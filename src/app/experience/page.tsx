@@ -15,6 +15,7 @@ export const metadata = {
   title: "Experience",
   description:
     "Selected client engagements, in-house leadership, and product-design experience across hospitality, retail, real estate, and heritage brands.",
+  alternates: { canonical: "/experience" },
 };
 
 export default function ExperiencePage() {

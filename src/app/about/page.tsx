@@ -17,7 +17,8 @@ import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
 export const metadata = {
   title: "About",
   description:
-    "Farley Creative bridges the gap between creative and conversion — founder-operator marketing and branding agency translating creative vision into scalable systems.",
+    "Founder-operator marketing and branding agency led by Collie Farley, serving Texas, the Hill Country, and the Gulf Coast. Where creative meets conversion.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
@@ -27,6 +28,10 @@ export default function AboutPage() {
       <main className="bg-cream text-warm-black">
         {/* HERO — single banner with diagonal stripes + integrated wordmark */}
         <section className="bg-cream">
+          <h1 className="sr-only">
+            About Farley Creative — founder-operator marketing and branding
+            agency in Texas, led by Collie Farley
+          </h1>
           <Image
             src="/about/hero-stripe-banner.jpg"
             alt="Farley Creative — diagonal stripe banner with farleycreative wordmark"

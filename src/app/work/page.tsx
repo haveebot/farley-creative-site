@@ -8,9 +8,10 @@ import { HeaderNav, SiteFooter } from "@/components/SiteChrome";
 import { CASE_STUDIES } from "@/lib/case-studies";
 
 export const metadata = {
-  title: "Work",
+  title: "Selected Work",
   description:
-    "Brand systems built to live in physical spaces, on screens, and at events — across hospitality, retail, real estate, and lifestyle.",
+    "Brand systems built to live in physical spaces, on screens, and at events — across hospitality, retail, real estate, and lifestyle, for Texas brands and beyond.",
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkPage() {

@@ -11,6 +11,7 @@ export const metadata = {
   title: "How we execute",
   description:
     "Founder-operator framing. Customized to your business. Operational efficiency over coverage. How Farley Creative actually works.",
+  alternates: { canonical: "/how-we-execute" },
 };
 
 export default function HowWeExecutePage() {
