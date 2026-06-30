@@ -32,6 +32,14 @@ export type TrackedDoc = {
 };
 
 export const TRACKED_DOCS: Record<string, TrackedDoc> = {
+  "the-palms-proposal-b633794d": {
+    token: "the-palms-proposal-b633794d",
+    title: "The Palms — Farley Creative Proposal",
+    label: "Farley Creative Proposal",
+    file: "/d/the-palms-proposal-b633794d.pdf",
+    prospectId: 2,
+    recipient: "Shana Craine",
+  },
   "the-palms-overview-38b8089f": {
     token: "the-palms-overview-38b8089f",
     title: "The Palms — Marketing & Sales Overview",
