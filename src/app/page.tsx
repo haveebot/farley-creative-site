@@ -252,8 +252,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CONNECT BAND — matchbox CTA per "Farley Creative Website Edits 2" (Canva DAHQrzC7CkM): flat mint, headline + connect button left, matchbox right. bg matches the photo's baked backdrop exactly. */}
-      <section className="bg-[#D0E3DD]">
+      {/* CONNECT BAND — matchbox CTA per "Farley Creative Website Edits 2" (Canva DAHQrzC7CkM): flat mint, headline + connect button left, matchbox right. soft-mint (#D0E3DD as of 2026-08-12) matches the photo's baked backdrop exactly. */}
+      <section className="bg-soft-mint">
         <Reveal className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-6 px-6 md:pl-[11.2vw] md:pr-[6.6vw] py-14 md:py-10 md:min-h-[33.4vw] text-center md:text-left">
           <div className="shrink-0">
             <h2 className="font-extrabold text-dark-olive leading-[1.05] tracking-[-0.04em] text-3xl sm:text-4xl lg:text-[3.35rem]">
