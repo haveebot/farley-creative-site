@@ -19,32 +19,30 @@ import { LogoTicker } from "@/components/LogoTicker";
 const SERVICE_CARDS = [
   {
     title: "Single Serve",
-    blurb: "Project-based services supporting your team with immediate execution.",
-    img: "/services/single-serve.jpg",
-    alt: "Farley Creative branded can on a market table",
-    cta: "Let's get to work",
-    href: "/contact",
-    btn: "bg-soft-mint",
-  },
-  {
-    title: "Agency Partnership",
-    blurb:
-      "One-stop-shop agency engagement aligned with your project and business at any stage.",
-    img: "/services/agency-partnership.jpg",
-    alt: "Farley Creative storefront with striped awnings",
-    cta: "Let's dive in",
+    blurb: "Project-based services",
+    img: "/services/single-serve-cup.jpg",
+    alt: "Farley Creative branded to-go coffee cup on a seafoam backdrop",
+    cta: "Project",
     href: "/contact",
     btn: "bg-butter-yellow",
   },
   {
-    title: "Pick Your Services",
-    blurb:
-      "Select the services right for your business needs with transparent pricing.",
-    img: "/services/pick-your-services.jpg",
-    alt: "Farley Creative branded service cans on a market table",
-    cta: "Customize a package",
-    href: "/packages",
+    title: "Agency Partnership",
+    blurb: "One-stop-shop agency engagement",
+    img: "/services/agency-storefront.jpg",
+    alt: "Farley Creative storefront with yellow striped awnings",
+    cta: "Let’s Create",
+    href: "/contact",
     btn: "bg-soft-mint",
+  },
+  {
+    title: "Customize",
+    blurb: "Pick only what you want off the menu",
+    img: "/services/customize-menu.jpg",
+    alt: "Farley Creative branded napkins and card with a martini glass",
+    cta: "Packages",
+    href: "/packages",
+    btn: "bg-butter-yellow",
   },
 ];
 
@@ -111,40 +109,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES — three ways to engage: single serve / agency / pick-your-services */}
+      {/* SERVICES — three ways to engage, per "Farley Creative Website Edits 1" (Canva DAHSF_-JJ5Q): full-bleed grid, left-aligned band */}
       <section id="services">
-        <div className="bg-warm-black text-butter-yellow px-6 py-7 md:py-9">
-          <h2 className="max-w-6xl mx-auto text-center font-serif italic leading-snug text-lg sm:text-xl md:text-2xl lg:text-[1.75rem]">
+        <div className="bg-warm-black text-butter-yellow px-6 md:px-12 py-3 md:py-4">
+          <h2 className="font-serif italic leading-snug text-lg sm:text-xl md:text-2xl lg:text-[1.75rem]">
             From freelance projects to full-stack agency engagement - we&rsquo;re
             ready to plug into your project.
           </h2>
         </div>
-        <div className="bg-cream text-warm-black px-6 py-16 md:py-20">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12">
+        <div className="bg-cream text-warm-black px-6 md:px-[7vw] py-10 md:py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-14 md:gap-x-[8vw]">
             {SERVICE_CARDS.map((c, i) => (
               <Reveal
                 key={c.title}
                 delay={i * 90}
                 className="flex flex-col items-center text-center"
               >
-                <h3 className="text-lg md:text-xl font-bold uppercase tracking-wide mb-4">
+                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide mb-2">
                   {c.title}
                 </h3>
-                <p className="font-serif italic text-base md:text-lg leading-snug mb-7 max-w-xs">
+                <p className="font-serif italic text-base md:text-lg leading-snug mb-4">
                   {c.blurb}
                 </p>
-                <div className="relative w-full aspect-[3/2] overflow-hidden rounded-2xl mb-7">
+                <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl mb-4">
                   <Image
                     src={c.img}
                     alt={c.alt}
                     fill
-                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 33vw, 90vw"
+                    sizes="(min-width: 768px) 23vw, 90vw"
                     className="object-cover"
                   />
                 </div>
                 <Link
                   href={c.href}
-                  className={`block w-full max-w-[200px] text-center ${c.btn} text-warm-black text-xs md:text-sm uppercase tracking-[0.28em] px-6 py-4 leading-relaxed hover:opacity-90 transition`}
+                  className={`block w-[73%] text-center ${c.btn} text-warm-black text-xs md:text-sm uppercase tracking-[0.28em] px-6 py-4 md:py-5 leading-relaxed hover:opacity-90 transition`}
                 >
                   {c.cta}
                 </Link>
@@ -156,6 +154,36 @@ export default function HomePage() {
 
       {/* BRANDS I'VE WORKED WITH — white-logo marquee on a dark band */}
       <LogoTicker />
+
+      {/* BRANDING BAND — fabric CTA per "Farley Creative Website Edits 3" (Canva DAHSGLCVASM): full-bleed stripe-cloth photo, headline left, weave CTA right */}
+      <section className="relative overflow-hidden">
+        <Image
+          src="/home/fabric-band.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+          aria-hidden
+        />
+        <Reveal className="relative flex flex-col md:flex-row items-center justify-between gap-10 md:gap-6 px-6 md:pl-[6.6vw] md:pr-[12vw] py-16 md:py-10 md:min-h-[33.4vw] text-center md:text-left">
+          <h2 className="font-extrabold text-dark-olive leading-[1.05] tracking-[-0.04em] text-3xl sm:text-4xl lg:text-[3.35rem]">
+            your brand is the fabric
+            <br />
+            of your business.
+          </h2>
+          <div className="flex flex-col items-center shrink-0">
+            <p className="font-serif italic text-dark-olive text-2xl lg:text-[2.15rem] leading-snug mb-5">
+              let&rsquo;s weave your story
+            </p>
+            <Link
+              href="/packages"
+              className="inline-block bg-butter-yellow text-warm-black font-bold uppercase tracking-[0.22em] text-sm lg:text-base text-center min-w-60 px-8 py-4 lg:py-5 hover:opacity-90 transition"
+            >
+              Branding
+            </Link>
+          </div>
+        </Reveal>
+      </section>
 
       {/* SELECTED WORK — 6 case studies per Collie's mockup (PAL, PSC, Palm Republic, PALMFEST, Sage Em, Cinnamon Shore) */}
       <section id="work" className="bg-cream text-warm-black px-6 py-24">
@@ -222,6 +250,35 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* CONNECT BAND — matchbox CTA per "Farley Creative Website Edits 2" (Canva DAHQrzC7CkM): flat mint, headline + connect button left, matchbox right. bg matches the photo's baked backdrop exactly. */}
+      <section className="bg-[#D0E3DD]">
+        <Reveal className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-6 px-6 md:pl-[11.2vw] md:pr-[6.6vw] py-14 md:py-10 md:min-h-[33.4vw] text-center md:text-left">
+          <div className="shrink-0">
+            <h2 className="font-extrabold text-dark-olive leading-[1.05] tracking-[-0.04em] text-3xl sm:text-4xl lg:text-[3.35rem]">
+              strike up the
+              <br />
+              conversation
+            </h2>
+            <Link
+              href="/contact"
+              className="mt-8 lg:mt-9 inline-block bg-butter-yellow text-warm-black font-bold uppercase tracking-[0.22em] text-sm lg:text-base text-center min-w-60 px-8 py-4 lg:py-5 hover:opacity-90 transition"
+            >
+              Let&rsquo;s Connect
+            </Link>
+          </div>
+          <div className="w-full max-w-[520px] md:w-[35.6vw] md:max-w-none">
+            <Image
+              src="/home/matchbox.jpg"
+              alt="Farley Creative branded matchbox with matches"
+              width={1600}
+              height={1015}
+              sizes="(min-width: 768px) 36vw, 90vw"
+              className="w-full h-auto"
+            />
+          </div>
+        </Reveal>
       </section>
 
 
