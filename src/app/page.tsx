@@ -155,6 +155,36 @@ export default function HomePage() {
       {/* BRANDS I'VE WORKED WITH — white-logo marquee on a dark band */}
       <LogoTicker />
 
+      {/* BRANDING BAND — fabric CTA per "Farley Creative Website Edits 3" (Canva DAHSGLCVASM): full-bleed stripe-cloth photo, headline left, weave CTA right */}
+      <section className="relative overflow-hidden">
+        <Image
+          src="/home/fabric-band.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+          aria-hidden
+        />
+        <Reveal className="relative flex flex-col md:flex-row items-center justify-between gap-10 md:gap-6 px-6 md:pl-[6.6vw] md:pr-[12vw] py-16 md:py-10 md:min-h-[33.4vw] text-center md:text-left">
+          <h2 className="font-extrabold text-dark-olive leading-[1.05] tracking-[-0.04em] text-3xl sm:text-4xl lg:text-[3.35rem]">
+            your brand is the fabric
+            <br />
+            of your business.
+          </h2>
+          <div className="flex flex-col items-center shrink-0">
+            <p className="font-serif italic text-dark-olive text-2xl lg:text-[2.15rem] leading-snug mb-5">
+              let&rsquo;s weave your story
+            </p>
+            <Link
+              href="/packages"
+              className="inline-block bg-butter-yellow text-warm-black font-bold uppercase tracking-[0.22em] text-sm lg:text-base text-center min-w-60 px-8 py-4 lg:py-5 hover:opacity-90 transition"
+            >
+              Branding
+            </Link>
+          </div>
+        </Reveal>
+      </section>
+
       {/* SELECTED WORK — 6 case studies per Collie's mockup (PAL, PSC, Palm Republic, PALMFEST, Sage Em, Cinnamon Shore) */}
       <section id="work" className="bg-cream text-warm-black px-6 py-24">
         <div className="max-w-6xl mx-auto">
@@ -220,6 +250,35 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* CONNECT BAND — matchbox CTA per "Farley Creative Website Edits 2" (Canva DAHQrzC7CkM): flat mint, headline + connect button left, matchbox right. bg matches the photo's baked backdrop exactly. */}
+      <section className="bg-[#D0E3DD]">
+        <Reveal className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-6 px-6 md:pl-[11.2vw] md:pr-[6.6vw] py-14 md:py-10 md:min-h-[33.4vw] text-center md:text-left">
+          <div className="shrink-0">
+            <h2 className="font-extrabold text-dark-olive leading-[1.05] tracking-[-0.04em] text-3xl sm:text-4xl lg:text-[3.35rem]">
+              strike up the
+              <br />
+              conversation
+            </h2>
+            <Link
+              href="/contact"
+              className="mt-8 lg:mt-9 inline-block bg-butter-yellow text-warm-black font-bold uppercase tracking-[0.22em] text-sm lg:text-base text-center min-w-60 px-8 py-4 lg:py-5 hover:opacity-90 transition"
+            >
+              Let&rsquo;s Connect
+            </Link>
+          </div>
+          <div className="w-full max-w-[520px] md:w-[35.6vw] md:max-w-none">
+            <Image
+              src="/home/matchbox.jpg"
+              alt="Farley Creative branded matchbox with matches"
+              width={1600}
+              height={1015}
+              sizes="(min-width: 768px) 36vw, 90vw"
+              className="w-full h-auto"
+            />
+          </div>
+        </Reveal>
       </section>
 
 
