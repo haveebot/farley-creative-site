@@ -19,32 +19,30 @@ import { LogoTicker } from "@/components/LogoTicker";
 const SERVICE_CARDS = [
   {
     title: "Single Serve",
-    blurb: "Project-based services supporting your team with immediate execution.",
-    img: "/services/single-serve.jpg",
-    alt: "Farley Creative branded can on a market table",
-    cta: "Let's get to work",
-    href: "/contact",
-    btn: "bg-soft-mint",
-  },
-  {
-    title: "Agency Partnership",
-    blurb:
-      "One-stop-shop agency engagement aligned with your project and business at any stage.",
-    img: "/services/agency-partnership.jpg",
-    alt: "Farley Creative storefront with striped awnings",
-    cta: "Let's dive in",
+    blurb: "Project-based services",
+    img: "/services/single-serve-cup.jpg",
+    alt: "Farley Creative branded to-go coffee cup on a seafoam backdrop",
+    cta: "Project",
     href: "/contact",
     btn: "bg-butter-yellow",
   },
   {
-    title: "Pick Your Services",
-    blurb:
-      "Select the services right for your business needs with transparent pricing.",
-    img: "/services/pick-your-services.jpg",
-    alt: "Farley Creative branded service cans on a market table",
-    cta: "Customize a package",
-    href: "/packages",
+    title: "Agency Partnership",
+    blurb: "One-stop-shop agency engagement",
+    img: "/services/agency-storefront.jpg",
+    alt: "Farley Creative storefront with yellow striped awnings",
+    cta: "Let’s Create",
+    href: "/contact",
     btn: "bg-soft-mint",
+  },
+  {
+    title: "Customize",
+    blurb: "Pick only what you want off the menu",
+    img: "/services/customize-menu.jpg",
+    alt: "Farley Creative branded napkins and card with a martini glass",
+    cta: "Packages",
+    href: "/packages",
+    btn: "bg-butter-yellow",
   },
 ];
 
@@ -111,40 +109,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES — three ways to engage: single serve / agency / pick-your-services */}
+      {/* SERVICES — three ways to engage, per "Farley Creative Website Edits 1" (Canva DAHSF_-JJ5Q): full-bleed grid, left-aligned band */}
       <section id="services">
-        <div className="bg-warm-black text-butter-yellow px-6 py-7 md:py-9">
-          <h2 className="max-w-6xl mx-auto text-center font-serif italic leading-snug text-lg sm:text-xl md:text-2xl lg:text-[1.75rem]">
+        <div className="bg-warm-black text-butter-yellow px-6 md:px-12 py-3 md:py-4">
+          <h2 className="font-serif italic leading-snug text-lg sm:text-xl md:text-2xl lg:text-[1.75rem]">
             From freelance projects to full-stack agency engagement - we&rsquo;re
             ready to plug into your project.
           </h2>
         </div>
-        <div className="bg-cream text-warm-black px-6 py-16 md:py-20">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12">
+        <div className="bg-cream text-warm-black px-6 md:px-[7vw] py-10 md:py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-14 md:gap-x-[8vw]">
             {SERVICE_CARDS.map((c, i) => (
               <Reveal
                 key={c.title}
                 delay={i * 90}
                 className="flex flex-col items-center text-center"
               >
-                <h3 className="text-lg md:text-xl font-bold uppercase tracking-wide mb-4">
+                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide mb-2">
                   {c.title}
                 </h3>
-                <p className="font-serif italic text-base md:text-lg leading-snug mb-7 max-w-xs">
+                <p className="font-serif italic text-base md:text-lg leading-snug mb-4">
                   {c.blurb}
                 </p>
-                <div className="relative w-full aspect-[3/2] overflow-hidden rounded-2xl mb-7">
+                <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl mb-4">
                   <Image
                     src={c.img}
                     alt={c.alt}
                     fill
-                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 33vw, 90vw"
+                    sizes="(min-width: 768px) 23vw, 90vw"
                     className="object-cover"
                   />
                 </div>
                 <Link
                   href={c.href}
-                  className={`block w-full max-w-[200px] text-center ${c.btn} text-warm-black text-xs md:text-sm uppercase tracking-[0.28em] px-6 py-4 leading-relaxed hover:opacity-90 transition`}
+                  className={`block w-[73%] text-center ${c.btn} text-warm-black text-xs md:text-sm uppercase tracking-[0.28em] px-6 py-4 md:py-5 leading-relaxed hover:opacity-90 transition`}
                 >
                   {c.cta}
                 </Link>
