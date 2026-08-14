@@ -13,6 +13,11 @@ Persistent log of pending operator-tier work for `farleycreative.com`. Cross off
 
 - [ ] **Confirm Collie's Vercel team access** to `haveebots-projects/farley-creative-site` — she may already be in (Hub access carried over) but worth visually confirming in Vercel team settings so previews + project dashboard work for her
 
+- [ ] **Activate contact-form inbox copies** — `/api/contact` now also emails each submission to `collie@farleycreative.com`, but stays dormant until `RESEND_API_KEY` is set on the `farley-creative-site` Vercel project. Two paths:
+  - (a) Mint a key from the existing HeyeLab/Hub Resend account. If `farleycreative.com` is verified there, also set `CONTACT_NOTIFY_FROM` (e.g. `Farley Creative <notify@farleycreative.com>`) so the copy comes from a branded sender.
+  - (b) Collie creates her own free Resend account **signed up with collie@farleycreative.com** — the default sender (`onboarding@resend.dev`) only delivers to the account owner's address, which is exactly the recipient here, so this path needs **no DNS at all**.
+  - Optional overrides: `CONTACT_NOTIFY_TO`, `CONTACT_NOTIFY_FROM`.
+
 ## Collie's first edits (whenever she's ready)
 
 The site is hers to customize. She has write access to `github.com/haveebot/farley-creative-site` (invite sent 2026-05-25). To make changes:
