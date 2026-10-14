@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useOpenBeacon } from "./useOpenBeacon";
 
 /**
  * Slim, brand-flavored PDF viewer for a tracked document.
@@ -19,22 +19,7 @@ export default function DocViewer({
   title: string;
   file: string;
 }) {
-  const fired = useRef(false);
-
-  useEffect(() => {
-    if (fired.current) return;
-    fired.current = true;
-    try {
-      fetch("/api/doc-open", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
-        keepalive: true,
-      }).catch(() => {});
-    } catch {
-      /* tracking must never break the viewer */
-    }
-  }, [token]);
+  useOpenBeacon(token);
 
   return (
     <div className="flex h-dvh flex-col bg-warm-black text-cream">

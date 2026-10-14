@@ -14,6 +14,10 @@
  *      `python3 -c "import secrets; print(secrets.token_hex(4))"` for the suffix).
  *   2. Add an entry below keyed by the same token.
  *   That's it — the route, viewer, and tracking pick it up automatically.
+ *
+ * Website design previews use `pages` instead of `file`: section images
+ * (exported from Canva at 2x) in /public/d/<token>/, stacked edge to edge so
+ * the client scrolls one homepage the way they would on the live site.
  */
 
 export type TrackedDoc = {
@@ -23,8 +27,10 @@ export type TrackedDoc = {
   title: string;
   /** Short human label used in the Hub open-event note. */
   label: string;
-  /** Path to the PDF under /public. */
-  file: string;
+  /** Path to the PDF under /public. Omit for a website preview (`pages`). */
+  file?: string;
+  /** Website preview: section images under /public, top to bottom. */
+  pages?: { src: string; alt: string }[];
   /** Hub prospect id whose timeline receives the open events. */
   prospectId: number;
   /** Who this link was sent to — included in the open-event note. */
@@ -32,6 +38,25 @@ export type TrackedDoc = {
 };
 
 export const TRACKED_DOCS: Record<string, TrackedDoc> = {
+  "tanner-website-preview-76b068f3": {
+    token: "tanner-website-preview-76b068f3",
+    title: "Tanner Neidhardt Law — Website Design Preview",
+    label: "Website Design Preview (first look)",
+    pages: [
+      { src: "/d/tanner-website-preview-76b068f3/01.jpg", alt: "Hero: Tanner Neidhardt, trial lawyer, strategist, former judge and arbitrator" },
+      { src: "/d/tanner-website-preview-76b068f3/02.jpg", alt: "Three ways to work with Tanner: TN Law, TN Trial Advocacy and TN Arbitration" },
+      { src: "/d/tanner-website-preview-76b068f3/03.jpg", alt: "TN Law: representing corporations and individuals" },
+      { src: "/d/tanner-website-preview-76b068f3/04.jpg", alt: "$399 million jury verdict, July 2026" },
+      { src: "/d/tanner-website-preview-76b068f3/05.jpg", alt: "Trial Advocacy: strategies that fit the jury, not fight it" },
+      { src: "/d/tanner-website-preview-76b068f3/06.jpg", alt: "Arbitration: efficiency and fairness from a former judge" },
+      { src: "/d/tanner-website-preview-76b068f3/07.jpg", alt: "Experience: judge, trial lawyer, strategist and teacher" },
+      { src: "/d/tanner-website-preview-76b068f3/08.jpg", alt: "Tanner in the news: recent coverage" },
+      { src: "/d/tanner-website-preview-76b068f3/09.jpg", alt: "Texan Integrity" },
+      { src: "/d/tanner-website-preview-76b068f3/10.jpg", alt: "Contact Tanner Neidhardt Law" },
+    ],
+    prospectId: 5,
+    recipient: "Tanner & Lauren Neidhardt",
+  },
   "bird-dog-proposal-2434dec5": {
     token: "bird-dog-proposal-2434dec5",
     title: "Bird Dog Designs — Farley Creative Proposal",
