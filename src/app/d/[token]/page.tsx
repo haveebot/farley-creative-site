@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTrackedDoc } from "@/lib/tracked-docs";
 import DocViewer from "./DocViewer";
+import WebPreview from "./WebPreview";
 
 type Params = { token: string };
 
@@ -29,6 +30,11 @@ export default async function TrackedDocPage({
   const { token } = await params;
   const doc = getTrackedDoc(token);
   if (!doc) notFound();
+
+  if (doc.pages) {
+    return <WebPreview token={doc.token} pages={doc.pages} />;
+  }
+  if (!doc.file) notFound();
 
   return (
     <DocViewer
