@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getTrackedDoc } from "@/lib/tracked-docs";
+import { getTrackedDoc, previewSections } from "@/lib/tracked-docs";
 import DocViewer from "./DocViewer";
+import SitePreview from "./SitePreview";
 import WebPreview from "./WebPreview";
 
 type Params = { token: string };
@@ -31,6 +32,18 @@ export default async function TrackedDocPage({
   const doc = getTrackedDoc(token);
   if (!doc) notFound();
 
+  if (doc.site) {
+    const sections = previewSections(doc.site, "");
+    if (!sections) notFound();
+    return (
+      <SitePreview
+        token={doc.token}
+        nav={doc.site.nav}
+        sections={sections}
+        slug=""
+      />
+    );
+  }
   if (doc.pages) {
     return <WebPreview token={doc.token} pages={doc.pages} />;
   }
