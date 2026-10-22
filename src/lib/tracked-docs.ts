@@ -303,6 +303,14 @@ export const TRACKED_DOCS: Record<string, TrackedDoc> = {
     prospectId: 2,
     recipient: "Shana Craine",
   },
+  "chasing-sensuality-vibe-check-1e478d01": {
+    token: "chasing-sensuality-vibe-check-1e478d01",
+    title: "Chasing Sensuality — Vibe Check",
+    label: "Vibe Check (Brand Archetype Discovery)",
+    file: "/d/chasing-sensuality-vibe-check-1e478d01.pdf",
+    prospectId: 6,
+    recipient: "Krissy Lilljedahl",
+  },
 };
 
 export function getTrackedDoc(token: string): TrackedDoc | undefined {
