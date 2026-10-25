@@ -311,6 +311,14 @@ export const TRACKED_DOCS: Record<string, TrackedDoc> = {
     prospectId: 6,
     recipient: "Krissy Lilljedahl",
   },
+  "chasing-sensuality-proposal-08717c96": {
+    token: "chasing-sensuality-proposal-08717c96",
+    title: "Chasing Sensuality — Farley Creative Proposal",
+    label: "Farley Creative Proposal",
+    file: "/d/chasing-sensuality-proposal-08717c96.pdf",
+    prospectId: 6,
+    recipient: "Krissy Lilljedahl",
+  },
 };
 
 export function getTrackedDoc(token: string): TrackedDoc | undefined {
