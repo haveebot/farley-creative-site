@@ -335,6 +335,21 @@ export const TRACKED_DOCS: Record<string, TrackedDoc> = {
     prospectId: 6,
     recipient: "Krissy Lilljedahl",
   },
+  "chasing-sensuality-about-496c03eb": {
+    token: "chasing-sensuality-about-496c03eb",
+    title: "Chasing Sensuality — About Page (proposed)",
+    label: "About Page (proposed)",
+    pages: [
+      { src: "/d/chasing-sensuality-about-496c03eb/01.jpg", alt: "Hero: chasing SENSUALITY, the practice of living more awake and beautifully wild" },
+      { src: "/d/chasing-sensuality-about-496c03eb/02.jpg", alt: "About: She's still in there" },
+      { src: "/d/chasing-sensuality-about-496c03eb/03.jpg", alt: "Hi, I'm Krissy: home on the coast, the season I stopped calling it fine" },
+      { src: "/d/chasing-sensuality-about-496c03eb/04.jpg", alt: "The Wild Woman Within: finding my way back to her" },
+      { src: "/d/chasing-sensuality-about-496c03eb/05.jpg", alt: "Join me: let's take time, with the sign-up" },
+      { src: "/d/chasing-sensuality-about-496c03eb/06.jpg", alt: "Footer" },
+    ],
+    prospectId: 6,
+    recipient: "Krissy Lilljedahl",
+  },
   "chasing-sensuality-website-v1-3da0fe22": {
     token: "chasing-sensuality-website-v1-3da0fe22",
     title: "Chasing Sensuality — Website V1 Homepage",
