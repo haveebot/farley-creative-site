@@ -319,6 +319,22 @@ export const TRACKED_DOCS: Record<string, TrackedDoc> = {
     prospectId: 6,
     recipient: "Krissy Lilljedahl",
   },
+  "chasing-sensuality-brand-book-7e1f36c2": {
+    token: "chasing-sensuality-brand-book-7e1f36c2",
+    title: "Chasing Sensuality — Brand Book",
+    label: "Brand Book v2",
+    file: "/d/chasing-sensuality-brand-book-7e1f36c2.pdf",
+    prospectId: 6,
+    recipient: "Krissy Lilljedahl",
+  },
+  "chasing-sensuality-round-two-summary-8af41938": {
+    token: "chasing-sensuality-round-two-summary-8af41938",
+    title: "Chasing Sensuality — Round Two Summary",
+    label: "Round Two Summary",
+    file: "/d/chasing-sensuality-round-two-summary-8af41938.pdf",
+    prospectId: 6,
+    recipient: "Krissy Lilljedahl",
+  },
 };
 
 export function getTrackedDoc(token: string): TrackedDoc | undefined {
