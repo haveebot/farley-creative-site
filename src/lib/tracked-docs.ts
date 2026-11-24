@@ -335,6 +335,14 @@ export const TRACKED_DOCS: Record<string, TrackedDoc> = {
     prospectId: 6,
     recipient: "Krissy Lilljedahl",
   },
+  "chasing-sensuality-website-v1-3da0fe22": {
+    token: "chasing-sensuality-website-v1-3da0fe22",
+    title: "Chasing Sensuality — Website V1 Homepage",
+    label: "Website V1 Homepage",
+    file: "/d/chasing-sensuality-website-v1-3da0fe22.pdf",
+    prospectId: 6,
+    recipient: "Krissy Lilljedahl",
+  },
 };
 
 export function getTrackedDoc(token: string): TrackedDoc | undefined {
